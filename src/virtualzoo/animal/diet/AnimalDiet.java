@@ -9,6 +9,9 @@ package virtualzoo.animal.diet;
  * @since   3.0
  */
 public abstract class AnimalDiet {
+    /**
+     * Nilai berat Animal (dalam kilogram).
+     */
     protected int weight;
     /**
      * Atribut yang menentukan apakah Animal memakan daging atau tidak.
