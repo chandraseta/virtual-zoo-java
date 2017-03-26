@@ -1,7 +1,7 @@
 package virtualzoo.animal.behavior;
 
 /**
- * Kelas AnimalBehavior menentukan perilaku hewan.
+ * Kelas AnimalBehavior menentukan perilaku hewan
  * yang ada di dalam Zoo.
  *
  * @author Holy Lovenia - 13515113
