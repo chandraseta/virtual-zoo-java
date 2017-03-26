@@ -7,7 +7,6 @@ package virtualzoo.animal.behavior;
  * @version 3.0
  * @since   3.0
  */
-
 public class BehaviorTame extends AnimalBehavior {
     /**
      * Menetapkan perilaku Animal menjadi jinak
