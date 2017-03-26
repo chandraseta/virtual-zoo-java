@@ -5,8 +5,8 @@ import java.awt.*;
  * yang ada di dalam Zoo.
  *
  * @author Rionaldi Chandraseta - 13515077
- * @version 1.0
- * @since   1.0
+ * @version 3.0
+ * @since   3.0
  */
 public abstract class Animal {
     /**
@@ -18,21 +18,9 @@ public abstract class Animal {
      */
     protected int limb_count;
     /**
-     * Jenis kulit dari Animal
+     * Jenis kulit yang dimiliki Animal
      */
     protected String skin_type;
-    /**
-     * Atribut menyatakan Animal dapat hidup di habitat darat.
-     */
-    protected boolean is_land_animal;
-    /**
-     * Atribut menyatakan apakah Animal dapat hidup di habitat air.
-     */
-    protected boolean is_water_animal;
-    /**
-     * Atribut menyatakan apakah Animal dapat hidup di habitat udara.
-     */
-    protected boolean is_air_animal;
     /**
      * Sebuah point yang menyatakan lokasi dari Animal.
      */
@@ -69,30 +57,6 @@ public abstract class Animal {
         else {
             position.setLocation(position.getX()-1, position.getY());
         }
-    }
-
-    /**
-     * Mengembalikan nilai apakah Animal dapat hidup di habitat darat.
-     * @return Nilai is_land_animal.
-     */
-    public boolean IsLandAnimal() {
-        return is_land_animal;
-    }
-
-    /**
-     * Mengembalikan nilai apakah Animal dapat hidup di habitat air.
-     * @return Nilai is_water_animal.
-     */
-    public boolean IsWaterAnimal() {
-        return is_water_animal;
-    }
-
-    /**
-     * Mengembalikan nilai apakah Animal dapat hidup di habitat udara.
-     * @return Nilai is_air_animal.
-     */
-    public boolean IsAirAnimal() {
-        return is_air_animal;
     }
 
     /**
