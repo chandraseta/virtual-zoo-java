@@ -1,3 +1,5 @@
+package virtualzoo.animal;
+
 import java.awt.*;
 
 /**
