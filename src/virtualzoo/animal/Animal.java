@@ -1,5 +1,8 @@
 package virtualzoo.animal;
 
+import virtualzoo.animal.behavior.AnimalBehavior;
+import virtualzoo.animal.diet.AnimalDiet;
+
 import java.awt.*;
 
 /**
@@ -39,6 +42,14 @@ public abstract class Animal {
      * Sebuah point yang menyatakan lokasi dari Animal.
      */
     protected Point position;
+    /**
+     * Atribut yang menentukan kelakuan Animal.
+     */
+    protected AnimalBehavior animal_behavior;
+    /**
+     * Atribut yang menentukan jenis makanan hewan.
+     */
+    protected AnimalDiet animal_diet;
 
     /**
      * Mengembalikan ID Animal.
@@ -96,6 +107,7 @@ public abstract class Animal {
     public boolean isAirAnimal() {
         return is_air_animal;
     }
+
     /**
      * Mengembalikan sebuah Point yang berisi lokasi hewan.
      * @return Nilai position.
