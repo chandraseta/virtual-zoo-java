@@ -52,4 +52,13 @@ public abstract class AnimalBehavior {
    * @param id Nilai ID Animal yang mau dihapus
    */
   public abstract void removeEnemy(int id);
+
+  /**
+   * Memeriksa apakah Animal bisa disatukan dalam satu kandang dengan objek
+   * pengguna atau tidak.
+   *
+   * @param id Nilai ID Animal yang mau diperiksa.
+   * @return Nilai true/false Animal dengan ID=id merupakan musuh.
+   */
+  public abstract boolean isEnemy(int id);
 }

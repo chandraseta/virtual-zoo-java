@@ -41,7 +41,8 @@ public class BehaviorWild extends AnimalBehavior {
    * Memeriksa apakah Animal bisa disatukan dalam satu kandang dengan objek
    * pengguna atau tidak.
    *
-   * @param id Nilai ID Animal yang mau diperiksa
+   * @param id Nilai ID Animal yang mau diperiksa.
+   * @return Nilai true/false Animal dengan ID=id merupakan musuh.
    */
   public boolean isEnemy(int id) {
     return enemy.contains(id);
