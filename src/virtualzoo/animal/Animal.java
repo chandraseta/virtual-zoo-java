@@ -69,7 +69,7 @@ public abstract class Animal implements Renderable {
   public abstract void interact();
 
   /**
-   * Menggerakkan Animal dengan mengubah location-nya.
+   * Menggerakkan Animal dengan mengubah position-nya.
    *
    * @param movement Sebuah nilai yang menentukan arah gerak Animal.
    */
@@ -113,7 +113,7 @@ public abstract class Animal implements Renderable {
   }
 
   /**
-   * Mengembalikan sebuah Point yang berisi lokasi Animal.
+   * Mengembalikan sebuah Point yang berisi posisi Animal.
    *
    * @return Nilai position.
    */

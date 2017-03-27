@@ -41,7 +41,7 @@ public abstract class AnimalBehavior {
    * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau ditambahkan
+   * @param id Nilai ID Animal yang akan ditambahkan
    */
   public abstract void addEnemy(int id);
 
@@ -49,7 +49,7 @@ public abstract class AnimalBehavior {
    * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau dihapus
+   * @param id Nilai ID Animal yang akan dihapus
    */
   public abstract void removeEnemy(int id);
 
@@ -57,7 +57,7 @@ public abstract class AnimalBehavior {
    * Memeriksa apakah Animal bisa disatukan dalam satu kandang dengan objek
    * pengguna atau tidak.
    *
-   * @param id Nilai ID Animal yang mau diperiksa.
+   * @param id Nilai ID Animal yang akan diperiksa.
    * @return Nilai true/false Animal dengan ID=id merupakan musuh.
    */
   public abstract boolean isEnemy(int id);
