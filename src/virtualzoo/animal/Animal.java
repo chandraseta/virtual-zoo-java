@@ -47,7 +47,7 @@ public abstract class Animal {
      */
     protected AnimalBehavior animal_behavior;
     /**
-     * Atribut yang menentukan jenis makanan hewan.
+     * Atribut yang menentukan klasifikasi makanan hewan.
      */
     protected AnimalDiet animal_diet;
 
@@ -109,7 +109,7 @@ public abstract class Animal {
     }
 
     /**
-     * Mengembalikan sebuah Point yang berisi lokasi hewan.
+     * Mengembalikan sebuah Point yang berisi lokasi Animal.
      * @return Nilai position.
      */
     public Point getPosition() {
@@ -117,8 +117,24 @@ public abstract class Animal {
     }
 
     /**
+     * Mengembalikan kelakuan Animal.
+     * @return Nilai animal_behavior.
+     */
+    public AnimalBehavior getAnimalBehavior() {
+        return animal_behavior;
+    }
+
+    /**
+     * Mengembalikan klasifikasi makanan Animal.
+     * @return Nilai animal_diet.
+     */
+    public AnimalDiet getAnimalDiet() {
+        return animal_diet;
+    }
+
+    /**
      * Mengembalikan sebuah karakter untuk proses render.
-     * @return Sebuah char yang menandakan Animal
+     * @return Sebuah char yang menandakan Animal.
      */
     public char render() {
         return 'O';

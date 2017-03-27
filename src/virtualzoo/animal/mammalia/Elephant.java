@@ -20,9 +20,10 @@ public class Elephant extends Mammalia {
      * @param _weight Nilai berat elephant
      */
     public Elephant(int _x, int _y, int _weight) {
+        super();
         animal_behavior = new BehaviorTame();
         animal_diet = new Herbivora(_weight, 80);
-        ID = 3;
+        ID = 7;
         position.setLocation(_x, _y);
         is_land_animal = true;
         is_water_animal = false;
@@ -30,7 +31,7 @@ public class Elephant extends Mammalia {
     }
 
     /**
-     * Mengatur interaksi elephant
+     * Mengatur interaksi dengan elephant.
      */
     public void interact() {
         System.out.println("The elephant is playing with its own trunk");
