@@ -2,8 +2,10 @@ package virtualzoo.infrastructure;
 
 import java.awt.Point;
 import java.util.*;
-import virtualzoo.animal.*;
-import virtualzoo.animal.behavior.*;
+import virtualzoo.animal.Animal;
+import virtualzoo.animal.behavior.AnimalBehavior;
+import virtualzoo.animal.behavior.BehaviorWild;
+
 
 /**
  * Kelas Cage yang memiliki area dan berisi animal

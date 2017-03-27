@@ -21,8 +21,8 @@ public class Restaurant extends Facility {
      * Membuat sebuah restaurant.
      */
     public Restaurant(boolean accessible, String _name) {
+        super(accessible);
         facility_type = "Restaurant";
-        is_accessible = accessible;
         name = _name;
     }
 

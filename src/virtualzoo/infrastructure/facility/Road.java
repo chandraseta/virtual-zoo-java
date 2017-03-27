@@ -31,8 +31,8 @@ public class Road extends Facility {
      * @param _name Nama untuk sebuah Park.
      */
     public Road(boolean accessible, String _name) {
+        super(accessible);
         facility_type = "Road";
-        is_accessible = accessible;
         name = _name;
         is_entrance = false;
         is_exit = false;

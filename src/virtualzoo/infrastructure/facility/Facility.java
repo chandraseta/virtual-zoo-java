@@ -15,4 +15,13 @@ public abstract class Facility extends Cell {
      * Jenis Facility yang ada di dalam Zoo
      */
     protected String facility_type;
+
+    /**
+     * Constructor
+     * Menciptakan cell berisi fasilitas yang dapat/tidak dapat diakses.
+     * @param accessible Nilai true/false apakah dapat diakses.
+     */
+    Facility(boolean accessible) {
+        super(accessible);
+    }
 }
