@@ -16,7 +16,8 @@ public class LandHabitat extends Habitat implements Renderable {
      *
      * Menciptakan habitat darat.
      */
-    public LandHabitat() {
+    public LandHabitat(accessible) {
+        super(accessible);
         type = 'L';
     }
 
