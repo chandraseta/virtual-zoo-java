@@ -8,44 +8,48 @@ import java.util.Set;
  *
  * @author Holy Lovenia - 13515113
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public abstract class AnimalBehavior {
-    /**
-     * Berisi ID Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     */
-    protected Set<Integer> enemy;
 
-    /**
-     * Atribut menentukan apakah perilaku Animal jinak atau liar.
-     */
-    protected boolean is_wild;
+  /**
+   * Berisi ID Animal yang tidak bisa disatukan dalam satu kandang dengan
+   * objek pengguna.
+   */
+  protected Set<Integer> enemy;
 
-    /**
-     * Mengembalikan perilaku Animal
-     * @return Nilai is_wild
-     */
-    public boolean getBehavior() {
-        return is_wild;
-    }
+  /**
+   * Atribut menentukan apakah perilaku Animal jinak atau liar.
+   */
+  protected boolean is_wild;
 
-    /**
-     * Menetapkan perilaku Animal
-     */
-    public abstract void setBehavior();
+  /**
+   * Mengembalikan perilaku Animal
+   *
+   * @return Nilai is_wild
+   */
+  public boolean getBehavior() {
+    return is_wild;
+  }
 
-    /**
-     * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     * @param id Nilai ID Animal yang mau ditambahkan
-     */
-    public abstract void addEnemy(int id);
+  /**
+   * Menetapkan perilaku Animal
+   */
+  public abstract void setBehavior();
 
-    /**
-     * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     * @param id Nilai ID Animal yang mau dihapus
-     */
-    public abstract void removeEnemy(int id);
+  /**
+   * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
+   * objek pengguna.
+   *
+   * @param id Nilai ID Animal yang mau ditambahkan
+   */
+  public abstract void addEnemy(int id);
+
+  /**
+   * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
+   * objek pengguna.
+   *
+   * @param id Nilai ID Animal yang mau dihapus
+   */
+  public abstract void removeEnemy(int id);
 }

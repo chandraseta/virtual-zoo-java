@@ -6,41 +6,44 @@ package virtualzoo.animal.behavior;
  *
  * @author Holy Lovenia - 13515113
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public class BehaviorWild extends AnimalBehavior {
 
-    /**
-     * Menetapkan perilaku Animal menjadi liar
-     */
-    public void setBehavior() {
-        is_wild = true;
-    }
+  /**
+   * Menetapkan perilaku Animal menjadi liar
+   */
+  public void setBehavior() {
+    is_wild = true;
+  }
 
-    /**
-     * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     * @param id Nilai ID Animal yang mau ditambahkan
-     */
-    public void addEnemy(int id) {
-        enemy.add(id);
-    }
+  /**
+   * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
+   * objek pengguna.
+   *
+   * @param id Nilai ID Animal yang mau ditambahkan
+   */
+  public void addEnemy(int id) {
+    enemy.add(id);
+  }
 
-    /**
-     * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     * @param id Nilai ID Animal yang mau dihapus
-     */
-    public void removeEnemy(int id) {
-        enemy.remove(id);
-    }
+  /**
+   * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
+   * objek pengguna.
+   *
+   * @param id Nilai ID Animal yang mau dihapus
+   */
+  public void removeEnemy(int id) {
+    enemy.remove(id);
+  }
 
-    /**
-     * Memeriksa apakah Animal bisa disatukan dalam satu kandang dengan objek
-     * pengguna atau tidak.
-     * @param id Nilai ID Animal yang mau diperiksa
-     */
-    public boolean isEnemy(int id) {
-        return enemy.contains(id);
-    }
+  /**
+   * Memeriksa apakah Animal bisa disatukan dalam satu kandang dengan objek
+   * pengguna atau tidak.
+   *
+   * @param id Nilai ID Animal yang mau diperiksa
+   */
+  public boolean isEnemy(int id) {
+    return enemy.contains(id);
+  }
 }

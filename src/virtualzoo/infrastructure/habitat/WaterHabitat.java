@@ -7,25 +7,26 @@ import virtualzoo.misc.*;
  *
  * @author Oktavianus Handika - 13515035
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public class WaterHabitat extends Habitat implements Renderable {
 
-    /**
-     * Constructor
-     *
-     * Menciptakan habitat air.
-     */
-    public WaterHabitat() {
-        super();
-        type = 'W';
-    }
+  /**
+   * Constructor
+   *
+   * Menciptakan habitat air.
+   */
+  public WaterHabitat() {
+    super();
+    type = 'W';
+  }
 
-    /**
-     * Mengembalikan sebuah char untuk proses render.
-     * @return Sebuah char yang menandakan habitat air.
-     */
-    public char render() {
-        return 'w';
-    }
+  /**
+   * Mengembalikan sebuah char untuk proses render.
+   *
+   * @return Sebuah char yang menandakan habitat air.
+   */
+  public char render() {
+    return 'w';
+  }
 }

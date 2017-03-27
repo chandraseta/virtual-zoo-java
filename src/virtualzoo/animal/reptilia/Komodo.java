@@ -1,31 +1,31 @@
-package virtualzoo.animal.mammalia;
+package virtualzoo.animal.reptilia;
 
 import virtualzoo.animal.behavior.BehaviorTame;
 import virtualzoo.animal.diet.Carnivora;
 
 /**
- * Kelas Lion mendefinisikan atribut untuk lion.
+ * Kelas Komodo mendefinisikan atribut untuk komodo.
  *
  * @author Rionaldi Chandraseta - 13515077
  * @version 3.0
  * @since 3.0
  */
-public class Lion extends Mammalia {
+public class Komodo extends Reptilia {
 
   /**
    * Constructor
    *
-   * Menciptakan lion dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan komodo dengan posisi (_x,_y) dan berat _weight.
    *
    * @param _x Nilai absis posisi.
    * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat lion.
+   * @param _weight Nilai berat iguana.
    */
-  public Lion(int _x, int _y, int _weight) {
+  public Komodo(int _x, int _y, int _weight) {
     super();
     animal_behavior = new BehaviorTame();
-    animal_diet = new Carnivora(_weight, 60);
-    ID = 2;
+    animal_diet = new Carnivora(_weight, 70);
+    ID = 10;
     position.setLocation(_x, _y);
     is_land_animal = true;
     is_water_animal = false;
@@ -33,9 +33,9 @@ public class Lion extends Mammalia {
   }
 
   /**
-   * Mengatur interaksi dengan lion.
+   * Mengatur interaksi dengan komodo.
    */
   public void interact() {
-    System.out.println("The lion is roaring");
+    System.out.println("The komodo is looking at you intensely");
   }
 }

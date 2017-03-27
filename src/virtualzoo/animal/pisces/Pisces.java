@@ -8,14 +8,15 @@ import virtualzoo.animal.Animal;
  *
  * @author Holy Lovenia - 13515113
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public abstract class Pisces extends Animal {
-    /**
-     * Menciptakan pisces dengan atribut default untuk pisces pada umumnya
-     */
-    public Pisces() {
-        limb_count = 0;
-        skin_type = "Scales";
-    }
+
+  /**
+   * Menciptakan pisces dengan atribut default untuk pisces pada umumnya
+   */
+  public Pisces() {
+    limb_count = 0;
+    skin_type = "Scales";
+  }
 }

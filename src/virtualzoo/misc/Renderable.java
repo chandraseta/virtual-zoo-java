@@ -5,12 +5,13 @@ package virtualzoo.misc;
  *
  * @author Felix Limanta - 13515065
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public interface Renderable {
-    /**
-     * Untuk render ke layar
-     * Didefiniskan pada kelas turunan.
-     */
-    char render();
+
+  /**
+   * Untuk render ke layar
+   * Didefiniskan pada kelas turunan.
+   */
+  char render();
 }
