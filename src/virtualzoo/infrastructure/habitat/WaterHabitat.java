@@ -16,8 +16,8 @@ public class WaterHabitat extends Habitat implements Renderable {
      *
      * Menciptakan habitat air.
      */
-    public WaterHabitat(accessible) {
-        super(accessible);
+    public WaterHabitat() {
+        super();
         type = 'W';
     }
 
