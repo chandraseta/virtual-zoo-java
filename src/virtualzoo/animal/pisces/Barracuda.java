@@ -1,4 +1,7 @@
-package src.virtualzoo.animal.pisces;
+package virtualzoo.animal.pisces;
+
+import virtualzoo.animal.behavior.BehaviorTame;
+import virtualzoo.animal.diet.Carnivora;
 
 /**
  * Kelas Barracuda mendefinisikan atribut untuk barracuda.
