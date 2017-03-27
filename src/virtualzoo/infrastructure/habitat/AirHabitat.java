@@ -16,7 +16,8 @@ public class AirHabitat extends Habitat {
      *
      * Menciptakan habitat udara.
      */
-    public AirHabitat() {
+    public AirHabitat(accessible) {
+        super(accessible);
         type = 'A';
     }
 

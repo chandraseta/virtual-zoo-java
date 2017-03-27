@@ -16,7 +16,8 @@ public class LandHabitat extends Habitat {
      *
      * Menciptakan habitat darat.
      */
-    public LandHabitat() {
+    public LandHabitat(accessible) {
+        super(accessible);
         type = 'L';
     }
 
