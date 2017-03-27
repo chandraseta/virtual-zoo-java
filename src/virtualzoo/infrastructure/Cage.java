@@ -14,7 +14,7 @@ import virtualzoo.animal.behavior.BehaviorWild;
  * @version 3.0
  * @since   3.0
  */
-class Cage {
+public class Cage {
     public static final int LAND = 0;
     public static final int WATER = 1;
     public static final int AIR = 2;

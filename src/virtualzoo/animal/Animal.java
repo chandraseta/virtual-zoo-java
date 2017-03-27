@@ -2,7 +2,7 @@ package virtualzoo.animal;
 
 import virtualzoo.animal.behavior.AnimalBehavior;
 import virtualzoo.animal.diet.AnimalDiet;
-
+import virtualzoo.misc.Renderable;
 import java.awt.*;
 
 /**
@@ -13,7 +13,7 @@ import java.awt.*;
  * @version 3.0
  * @since   3.0
  */
-public abstract class Animal {
+public abstract class Animal implements Renderable {
     /**
      * ID unik untuk setiap jenis Animal.
      */
