@@ -14,4 +14,18 @@ public class BehaviorTame extends AnimalBehavior {
     public void setBehavior() {
         is_wild = false;
     }
+
+    /**
+     * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
+     * objek pengguna.
+     * @param id Nilai ID Animal yang mau ditambahkan
+     */
+    public void addEnemy(int id) {}
+
+    /**
+     * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
+     * objek pengguna.
+     * @param id Nilai ID Animal yang mau dihapus
+     */
+    public void removeEnemy(int id) {}
 }

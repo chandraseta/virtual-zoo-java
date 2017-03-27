@@ -1,6 +1,5 @@
 package virtualzoo.animal.behavior;
 
-import java.util.Set;
 
 /**
  * Kelas BehaviorWild mendefinisikan perilaku hewan liar.
@@ -10,11 +9,6 @@ import java.util.Set;
  * @since   3.0
  */
 public class BehaviorWild extends AnimalBehavior {
-    /**
-     * Berisi ID Animal yang tidak bisa disatukan dalam satu kandang dengan
-     * objek pengguna.
-     */
-    private Set<Integer> enemy;
 
     /**
      * Menetapkan perilaku Animal menjadi liar
