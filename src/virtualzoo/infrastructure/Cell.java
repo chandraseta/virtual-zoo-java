@@ -24,7 +24,7 @@ public abstract class Cell {
     /** Getter nilai is_accessible
      * @return Nilai is_accessible
      */
-    boolean isAccessible() {
+    public boolean isAccessible() {
         return is_accessible;
     }
 }
