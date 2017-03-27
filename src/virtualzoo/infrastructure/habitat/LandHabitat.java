@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.habitat;
 
-import virtualzoo.infrastructure.habitat.Habitat;
+import virtualzoo.misc.*;
 
 /**
  * Kelas LandHabitat mendefinisikan sebuah habitat darat di dalam Cell.
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.habitat.Habitat;
  * @version 3.0
  * @since   3.0
  */
-public class LandHabitat extends Habitat {
+public class LandHabitat extends Habitat implements Renderable {
 
     /**
      * Constructor
@@ -17,6 +17,7 @@ public class LandHabitat extends Habitat {
      * Menciptakan habitat darat.
      */
     public LandHabitat() {
+        super();
         type = 'L';
     }
 
@@ -24,7 +25,7 @@ public class LandHabitat extends Habitat {
      * Mengembalikan sebuah char untuk proses render.
      * @return Sebuah char yang menandakan habitat darat.
      */
-    char Render() {
+    public char render() {
         return 'l';
     }
 }

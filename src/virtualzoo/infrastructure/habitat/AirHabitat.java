@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.habitat;
 
-import virtualzoo.infrastructure.habitat.Habitat;
+import virtualzoo.misc.*;
 
 /**
  * Kelas AirHabitat mendefinisikan sebuah habitat udara di dalam Cell
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.habitat.Habitat;
  * @version 3.0
  * @since   3.0
  */
-public class AirHabitat extends Habitat {
+public class AirHabitat extends Habitat implements Renderable {
 
     /**
      * Constructor
@@ -17,6 +17,7 @@ public class AirHabitat extends Habitat {
      * Menciptakan habitat udara.
      */
     public AirHabitat() {
+        super();
         type = 'A';
     }
 
@@ -24,7 +25,7 @@ public class AirHabitat extends Habitat {
      * Mengembalikan sebuah char untuk proses render.
      * @return Sebuah char yang menandakan habitat udara.
      */
-    char Render() {
+    public char render() {
         return 'a';
     }
 }

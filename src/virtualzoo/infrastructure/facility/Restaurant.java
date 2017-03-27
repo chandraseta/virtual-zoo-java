@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.infrastructure.facility.Facility;
+import virtualzoo.misc.*;
 
 /**
  * Kelas Restaurant mendefinisikan sebuah tempat makan di dalam Zoo.
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.facility.Facility;
  * @version 3.0
  * @since   3.0
  */
-public class Restaurant extends Facility {
+public class Restaurant extends Facility implements Renderable {
     /**
      * Nama untuk setiap Restaurant.
      */
@@ -21,8 +21,8 @@ public class Restaurant extends Facility {
      * Membuat sebuah restaurant.
      */
     public Restaurant(boolean accessible, String _name) {
+        super(accessible);
         facility_type = "Restaurant";
-        is_accessible = accessible;
         name = _name;
     }
 

@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.infrastructure.facility.Facility;
+import virtualzoo.misc.*;
 
 /**
  * Kelas Park mendefinisikan sebuah taman di dalam Zoo.
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.facility.Facility;
  * @version 3.0
  * @since   3.0
  */
-public class Park extends Facility {
+public class Park extends Facility implements Renderable {
     /**
      * Nama untuk setiap Park.
      */
@@ -21,8 +21,8 @@ public class Park extends Facility {
      * Membuat sebuah taman.
      */
     public Park(boolean accessible, String _name) {
+        super(accessible);
         facility_type = "Park";
-        is_accessible = accessible;
         name = _name;
     }
 

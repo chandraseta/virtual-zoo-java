@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.infrastructure.facility.Facility;
+import virtualzoo.misc.*;
 
 /**
  * Kelas Road mendefinisikan sebuah jalan di dalam Zoo.
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.facility.Facility;
  * @version 3.0
  * @since   3.0
  */
-public class Road extends Facility {
+public class Road extends Facility implements Renderable {
     /**
      * Nama untuk setiap Park.
      */
@@ -31,8 +31,8 @@ public class Road extends Facility {
      * @param _name Nama untuk sebuah Park.
      */
     public Road(boolean accessible, String _name) {
+        super(accessible);
         facility_type = "Road";
-        is_accessible = accessible;
         name = _name;
         is_entrance = false;
         is_exit = false;

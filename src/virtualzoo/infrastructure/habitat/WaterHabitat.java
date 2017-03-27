@@ -1,6 +1,6 @@
 package virtualzoo.infrastructure.habitat;
 
-import virtualzoo.infrastructure.habitat.Habitat;
+import virtualzoo.misc.*;
 
 /**
  * Kelas WaterHabitat mendefinisikan sebuah habitat air di dalam Cell.
@@ -9,7 +9,7 @@ import virtualzoo.infrastructure.habitat.Habitat;
  * @version 3.0
  * @since   3.0
  */
-public class WaterHabitat extends Habitat {
+public class WaterHabitat extends Habitat implements Renderable {
 
     /**
      * Constructor
@@ -17,6 +17,7 @@ public class WaterHabitat extends Habitat {
      * Menciptakan habitat air.
      */
     public WaterHabitat() {
+        super();
         type = 'W';
     }
 
@@ -24,7 +25,7 @@ public class WaterHabitat extends Habitat {
      * Mengembalikan sebuah char untuk proses render.
      * @return Sebuah char yang menandakan habitat air.
      */
-    char Render() {
+    public char render() {
         return 'w';
     }
 }

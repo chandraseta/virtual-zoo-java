@@ -22,8 +22,7 @@ public abstract class Habitat extends Cell {
      * Menciptakan sebuah habitat dalam suatu Cell.
      */
     public Habitat() {
-        super();
-        is_accessible = false;
+        super(false);
     }
 
 }
