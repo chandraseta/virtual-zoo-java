@@ -28,7 +28,7 @@ public class Omnivora extends AnimalDiet {
      * Getter nilai makanan Animal dalam bentuk daging yang dibutuhkan
      * @return Jumlah daging yang dibutuhkan untuk Animal tertentu
      */
-    public int GetReqMeat() {
+    public int getReqMeat() {
         return (ratio_meat * weight / 100);
     }
 
@@ -36,7 +36,7 @@ public class Omnivora extends AnimalDiet {
      * Getter nilai makanan Animal dalam bentuk tumbuhan yang dibutuhkan
      * @return Jumlah tumbuhan yang dibutuhkan untuk Animal tertentu
      */
-    public int GetReqPlant() {
+    public int getReqPlant() {
         return (ratio_plant * weight / 100);
     }
 }

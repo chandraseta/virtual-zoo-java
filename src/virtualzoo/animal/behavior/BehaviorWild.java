@@ -19,7 +19,7 @@ public class BehaviorWild extends AnimalBehavior {
     /**
      * Menetapkan perilaku Animal menjadi liar
      */
-    public void SetBehavior() {
+    public void setBehavior() {
         is_wild = true;
     }
 
@@ -28,7 +28,7 @@ public class BehaviorWild extends AnimalBehavior {
      * objek pengguna.
      * @param id Nilai ID Animal yang mau ditambahkan
      */
-    public void AddEnemy(int id) {
+    public void addEnemy(int id) {
         enemy.add(id);
     }
 
@@ -37,7 +37,7 @@ public class BehaviorWild extends AnimalBehavior {
      * objek pengguna.
      * @param id Nilai ID Animal yang mau dihapus
      */
-    public void RemoveEnemy(int id) {
+    public void removeEnemy(int id) {
         enemy.remove(id);
     }
 
@@ -46,7 +46,7 @@ public class BehaviorWild extends AnimalBehavior {
      * pengguna atau tidak.
      * @param id Nilai ID Animal yang mau diperiksa
      */
-    public boolean IsEnemy(int id) {
+    public boolean isEnemy(int id) {
         return enemy.contains(id);
     }
 }

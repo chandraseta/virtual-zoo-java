@@ -18,12 +18,12 @@ public abstract class AnimalBehavior {
      * Mengembalikan perilaku Animal
      * @return Nilai is_wild
      */
-    public boolean GetBehavior() {
+    public boolean getBehavior() {
         return is_wild;
     }
 
     /**
      * Menetapkan perilaku Animal
      */
-    public abstract void SetBehavior();
+    public abstract void setBehavior();
 }

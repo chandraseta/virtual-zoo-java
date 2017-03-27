@@ -34,7 +34,7 @@ public abstract class AnimalDiet {
      * Menentukan apakah Animal yang dimaksud merupakan carnivora.
      * @return Nilai true/false apakah Animal herbivora.
      */
-    public boolean IsHerbivore() {
+    public boolean isHerbivore() {
         return (!eat_meat && eat_plant);
     }
 
@@ -42,7 +42,7 @@ public abstract class AnimalDiet {
      * Menentukan apakah Animal yang dimaksud merupakan carnivora.
      * @return Nilai true/false apakah Animal carnivora.
      */
-    public boolean IsCarnivore() {
+    public boolean isCarnivore() {
         return (eat_meat && !eat_plant);
     }
 
@@ -50,7 +50,7 @@ public abstract class AnimalDiet {
      * Menentukan apakah Animal yang dimaksud merupakan omnivora.
      * @return Nilai true/false apakah Animal omnivora.
      */
-    public boolean IsOmnivore() {
+    public boolean isOmnivore() {
         return (eat_meat && eat_plant);
     }
 
@@ -58,11 +58,11 @@ public abstract class AnimalDiet {
      * Menentukan kebutuhan makanan Animal yang berupa daging.
      * @return Jumlah daging yang dibutuhkan.
      */
-    public abstract int GetReqMeat();
+    public abstract int getReqMeat();
 
     /**
      * Menentukan kebutuhan makanan Animal yang berupa tumbuhan.
      * @return Jumlah tumbuhan yang diperlukan.
      */
-    public abstract int GetReqPlant();
+    public abstract int getReqPlant();
 }

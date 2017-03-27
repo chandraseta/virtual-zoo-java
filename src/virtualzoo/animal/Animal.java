@@ -12,27 +12,39 @@ import java.awt.*;
  */
 public abstract class Animal {
     /**
-     * ID unik untuk setiap jenis Animal
+     * ID unik untuk setiap jenis Animal.
      */
     protected int ID;
     /**
-     * Banyaknya alat gerak yang dimiliki Animal
+     * Banyaknya alat gerak yang dimiliki Animal.
      */
     protected int limb_count;
     /**
-     * Jenis kulit yang dimiliki Animal
+     * Jenis kulit yang dimiliki Animal.
      */
     protected String skin_type;
+    /**
+     * Atribut yang menentukan apakah Animal dapat hidup di habitat darat.
+     */
+    protected boolean is_land_animal;
+    /**
+     * Atribut yang menentukan apakah Animal dapat hidup di habitat air.
+     */
+    protected boolean is_water_animal;
+    /**
+     * Atribut yang menentukan apakah Animal dpaat hidup di habitat udara.
+     */
+    protected boolean is_air_animal;
     /**
      * Sebuah point yang menyatakan lokasi dari Animal.
      */
     protected Point position;
 
     /**
-     * Mengembalikan ID Animal
-     * @return Nilai ID
+     * Mengembalikan ID Animal.
+     * @return Nilai ID.
      */
-    public int GetID() {
+    public int getID() {
         return ID;
     }
 
@@ -40,13 +52,13 @@ public abstract class Animal {
      * Mengontrol interaksi Animal.
      * Setiap jenis Animal memiliki interaksi berbeda.
      */
-    public abstract void Interact();
+    public abstract void interact();
 
     /**
      * Menggerakkan Animal dengan mengubah location-nya.
-     * @param movement Sebuah nilai yang menentukan arah gerak Animal
+     * @param movement Sebuah nilai yang menentukan arah gerak Animal.
      */
-    public void Move(int movement) {
+    public void move(int movement) {
         if (movement == 1) {
             position.setLocation(position.getX(), position.getY()-1);
         }
@@ -62,10 +74,33 @@ public abstract class Animal {
     }
 
     /**
+     * Menentukan apakah Animal dapat hidup di habitat darat.
+     * @return Nilai is_land_animal.
+     */
+    public boolean isLandAnimal() {
+        return is_land_animal;
+    }
+
+    /**
+     * Menentukan apakah Animal dapat hidup di habitat air.
+     * @return Nilai is_water_animal.
+     */
+    public boolean isWaterAnimal() {
+        return is_water_animal;
+    }
+
+    /**
+     * Menentukan apakah Animal dapat hidup di habitat udara.
+     * @return Nilai is_air_animal.
+     */
+    public boolean isAirAnimal() {
+        return is_air_animal;
+    }
+    /**
      * Mengembalikan sebuah Point yang berisi lokasi hewan.
      * @return Nilai position.
      */
-    public Point GetPosition() {
+    public Point getPosition() {
         return position;
     }
 
@@ -73,7 +108,7 @@ public abstract class Animal {
      * Mengembalikan sebuah karakter untuk proses render.
      * @return Sebuah char yang menandakan Animal
      */
-    public char Render() {
+    public char render() {
         return 'O';
     }
 }

@@ -14,7 +14,7 @@ public abstract class Pisces extends Animal {
     /**
      * Menciptakan pisces dengan atribut default untuk pisces pada umumnya
      */
-    Pisces() {
+    public Pisces() {
         limb_count = 0;
         skin_type = "Scales";
     }
