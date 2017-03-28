@@ -89,7 +89,7 @@ public abstract class Animal implements Renderable {
    *
    * @return Nilai is_land_animal.
    */
-  public boolean isLandAnimal() {
+  public boolean getLandAnimal() {
     return isLandAnimal;
   }
 
@@ -98,7 +98,7 @@ public abstract class Animal implements Renderable {
    *
    * @return Nilai is_water_animal.
    */
-  public boolean isWaterAnimal() {
+  public boolean getWaterAnimal() {
     return isWaterAnimal;
   }
 
@@ -107,7 +107,7 @@ public abstract class Animal implements Renderable {
    *
    * @return Nilai is_air_animal.
    */
-  public boolean isAirAnimal() {
+  public boolean getAirAnimal() {
     return isAirAnimal;
   }
 

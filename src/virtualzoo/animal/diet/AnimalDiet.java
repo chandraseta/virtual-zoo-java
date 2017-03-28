@@ -37,6 +37,15 @@ public abstract class AnimalDiet {
   protected int ratioPlant;
 
   /** <p>
+   * Menentukan berat badan Animal.
+   * </p>
+   * @return Nilai weight.
+   */
+  public int getWeight() {
+    return (weight);
+  }
+
+  /** <p>
    * Menentukan apakah Animal yang dimaksud merupakan carnivora.
    * </p>
    * @return Nilai true/false apakah Animal herbivora.
