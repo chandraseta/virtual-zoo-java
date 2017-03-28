@@ -1,0 +1,13 @@
+virtualzoo
+virtualzoo.animal
+virtualzoo.animal.aves
+virtualzoo.animal.behavior
+virtualzoo.animal.diet
+virtualzoo.animal.mammalia
+virtualzoo.animal.pisces
+virtualzoo.animal.reptilia
+virtualzoo.infrastructure
+virtualzoo.infrastructure.facility
+virtualzoo.infrastructure.habitat
+virtualzoo.misc
+virtualzoo.zoo

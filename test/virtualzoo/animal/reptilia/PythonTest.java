@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class PythonTest {
   private Python python;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Python untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Python.
    */
-  public PythonTest(int locX, int locY, int animalWeight) {
-    python = new Python(locX, locY, animalWeight);
+  @Before
+  public void PythonSetUpTest() {
+    python = new Python(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class PythonTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", python.getId(), 9);
+    assertEquals("ID does not match", python.getId(), 9);
   }
 
   /**
    * <p>
-   * Python seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Python seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) python.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) python.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) python.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) python.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Python seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Python seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", python.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", python.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class PythonTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", python.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", python.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class PythonTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", python.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", python.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class PythonTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", python.getLandAnimal());
-    assertFalse("Water type matches", python.getWaterAnimal());
-    assertFalse("Air type matches", python.getAirAnimal());
+    assertTrue("Land type does not match", python.getLandAnimal());
+    assertFalse("Water type does not match", python.getWaterAnimal());
+    assertFalse("Air type does not match", python.getAirAnimal());
   }
 
   /**

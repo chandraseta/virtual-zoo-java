@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.mammalia.Tiger;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class TigerTest {
   private Tiger tiger;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Tiger untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Tiger.
    */
-  public TigerTest(int locX, int locY, int animalWeight) {
-    tiger = new Tiger(locX, locY, animalWeight);
+  @Before
+  public void TigerSetUpTest() {
+    tiger = new Tiger(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class TigerTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", tiger.getId(), 18);
+    assertEquals("ID does not match", tiger.getId(), 18);
   }
 
   /**
    * <p>
-   * Tiger seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Tiger seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) tiger.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) tiger.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) tiger.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) tiger.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Tiger seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Tiger seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", tiger.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", tiger.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class TigerTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", tiger.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", tiger.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class TigerTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", tiger.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", tiger.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class TigerTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", tiger.getLandAnimal());
-    assertFalse("Water type matches", tiger.getWaterAnimal());
-    assertFalse("Air type matches", tiger.getAirAnimal());
+    assertTrue("Land type does not match", tiger.getLandAnimal());
+    assertFalse("Water type does not match", tiger.getWaterAnimal());
+    assertFalse("Air type does not match", tiger.getAirAnimal());
   }
 
   /**

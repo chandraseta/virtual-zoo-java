@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class ColibriTest {
   private Colibri colibri;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Colibri untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Colibri.
    */
-  public ColibriTest(int locX, int locY, int animalWeight) {
-    colibri = new Colibri(locX, locY, animalWeight);
+  @Before
+  public void ColibriSetUpTest() {
+    colibri = new Colibri(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class ColibriTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", colibri.getId(), 18);
+    assertEquals("ID does not match", colibri.getId(), 18);
   }
 
   /**
    * <p>
-   * Colibri seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Colibri seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) colibri.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) colibri.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) colibri.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) colibri.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Colibri seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Colibri seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", colibri.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", colibri.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class ColibriTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", colibri.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", colibri.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class ColibriTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", colibri.getAnimalDiet().isHerbivore());
+    assertTrue("Diet does not match", colibri.getAnimalDiet().isHerbivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class ColibriTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", colibri.getLandAnimal());
-    assertFalse("Water type matches", colibri.getWaterAnimal());
-    assertTrue("Air type matches", colibri.getAirAnimal());
+    assertTrue("Land type does not match", colibri.getLandAnimal());
+    assertFalse("Water type does not match", colibri.getWaterAnimal());
+    assertTrue("Air type does not match", colibri.getAirAnimal());
   }
 
   /**

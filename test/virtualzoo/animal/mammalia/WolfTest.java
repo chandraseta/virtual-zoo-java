@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class WolfTest {
   private Wolf wolf;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Wolf untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Wolf.
    */
-  public WolfTest(int locX, int locY, int animalWeight) {
-    wolf = new Wolf(locX, locY, animalWeight);
+  @Before
+  public void WolfSetUpTest() {
+    wolf = new Wolf(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class WolfTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", wolf.getId(), 1);
+    assertEquals("ID does not match", wolf.getId(), 1);
   }
 
   /**
    * <p>
-   * Wolf seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Wolf seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) wolf.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) wolf.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) wolf.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) wolf.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Wolf seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Wolf seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", wolf.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", wolf.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class WolfTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", wolf.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", wolf.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class WolfTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", wolf.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", wolf.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class WolfTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", wolf.getLandAnimal());
-    assertFalse("Water type matches", wolf.getWaterAnimal());
-    assertFalse("Air type matches", wolf.getAirAnimal());
+    assertTrue("Land type does not match", wolf.getLandAnimal());
+    assertFalse("Water type does not match", wolf.getWaterAnimal());
+    assertFalse("Air type does not match", wolf.getAirAnimal());
   }
 
   /**

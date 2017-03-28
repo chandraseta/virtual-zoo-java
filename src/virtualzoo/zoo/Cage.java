@@ -19,42 +19,42 @@ import virtualzoo.animal.behavior.BehaviorWild;
 public class Cage {
 
   /**
-   * Konstanta untuk mempermudah pernyataan tipe LAND pada Cage
+   * Konstanta untuk mempermudah pernyataan tipe LAND pada Cage.
    */
   public static final int LAND = 0;
 
   /**
-   * Konstanta untuk mempermudah pernyataan tipe WATER pada Cage
+   * Konstanta untuk mempermudah pernyataan tipe WATER pada Cage.
    */
   public static final int WATER = 1;
 
   /**
-   * Konstanta untuk mempermudah pernyataan tipe AIR pada Cage
+   * Konstanta untuk mempermudah pernyataan tipe AIR pada Cage.
    */
   public static final int AIR = 2;
 
   /**
-   * Atribut yang menandakan tipe Cage
+   * Atribut yang menandakan tipe Cage.
    */
   private int type;
 
   /**
-   * Berisi kumpulan Point yang membentuk Cage ini
+   * Berisi kumpulan Point yang membentuk Cage ini.
    */
   private Set<Point> area;
 
   /**
-   * Berisi Animal yang ada di Cage ini
+   * Berisi Animal yang ada di Cage ini.
    */
   private Vector<Animal> animal;
 
   /**
-   * Jumlah Animal yang ada di Cage ini
+   * Jumlah Animal yang ada di Cage ini.
    */
   private int nbAnimal;
 
   /**
-   * Constructor
+   * Constructor.
    * Menciptakan cage default yaitu dengan habitat darat.
    */
   public Cage() {
@@ -65,10 +65,10 @@ public class Cage {
   }
 
   /**
-   * Constructor
+   * Constructor.
    * Menciptakan cage dengan habitat tertentu.
    *
-   * @param habitatType tipe habitat
+   * @param habitatType tipe habitat.
    */
   public Cage(int habitatType) {
     type = habitatType;

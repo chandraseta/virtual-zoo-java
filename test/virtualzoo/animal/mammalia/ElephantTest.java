@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.mammalia.Elephant;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class ElephantTest {
   private Elephant elephant;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Elephant untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Elephant.
    */
-  public ElephantTest(int locX, int locY, int animalWeight) {
-    elephant = new Elephant(locX, locY, animalWeight);
+  @Before
+  public void ElephantSetUpTest() {
+    elephant = new Elephant(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class ElephantTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", elephant.getId(), 7);
+    assertEquals("ID does not match", elephant.getId(), 7);
   }
 
   /**
    * <p>
-   * Elephant seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Elephant seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) elephant.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) elephant.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) elephant.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) elephant.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Elephant seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Elephant seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", elephant.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", elephant.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class ElephantTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", elephant.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", elephant.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class ElephantTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", elephant.getAnimalDiet().isHerbivore());
+    assertTrue("Diet does not match", elephant.getAnimalDiet().isHerbivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class ElephantTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", elephant.getLandAnimal());
-    assertFalse("Water type matches", elephant.getWaterAnimal());
-    assertFalse("Air type matches", elephant.getAirAnimal());
+    assertTrue("Land type does not match", elephant.getLandAnimal());
+    assertFalse("Water type does not match", elephant.getWaterAnimal());
+    assertFalse("Air type does not match", elephant.getAirAnimal());
   }
 
   /**

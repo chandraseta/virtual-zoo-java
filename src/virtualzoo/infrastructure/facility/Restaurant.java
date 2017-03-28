@@ -19,6 +19,8 @@ public class Restaurant extends Facility {
    *
    * Membuat sebuah restaurant.
    * </p>
+   * @param accessible Nilai restauran bisa diakses atau tidak.
+   * @param facilityName Nama restauran.
    */
   public Restaurant(boolean accessible, String facilityName) {
     super(accessible);

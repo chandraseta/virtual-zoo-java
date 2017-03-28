@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class IguanaTest {
   private Iguana iguana;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Iguana untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Iguana.
    */
-  public IguanaTest(int locX, int locY, int animalWeight) {
-    iguana = new Iguana(locX, locY, animalWeight);
+  @Before
+  public void IguanaSetUpTest() {
+    iguana = new Iguana(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class IguanaTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", iguana.getId(), 11);
+    assertEquals("ID does not match", iguana.getId(), 11);
   }
 
   /**
    * <p>
-   * Iguana seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Iguana seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) iguana.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) iguana.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) iguana.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) iguana.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Iguana seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Iguana seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", iguana.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", iguana.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class IguanaTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", iguana.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", iguana.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class IguanaTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", iguana.getAnimalDiet().isOmnivore());
+    assertTrue("Diet does not match", iguana.getAnimalDiet().isOmnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class IguanaTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", iguana.getLandAnimal());
-    assertFalse("Water type matches", iguana.getWaterAnimal());
-    assertFalse("Air type matches", iguana.getAirAnimal());
+    assertTrue("Land type does not match", iguana.getLandAnimal());
+    assertFalse("Water type does not match", iguana.getWaterAnimal());
+    assertFalse("Air type does not match", iguana.getAirAnimal());
   }
 
   /**

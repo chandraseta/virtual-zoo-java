@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.mammalia.Giraffe;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class GiraffeTest {
   private Giraffe giraffe;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Giraffe untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Giraffe.
    */
-  public GiraffeTest(int locX, int locY, int animalWeight) {
-    giraffe = new Giraffe(locX, locY, animalWeight);
+  @Before
+  public void GiraffeSetUpTest() {
+    giraffe = new Giraffe(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class GiraffeTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", giraffe.getId(), 6);
+    assertEquals("ID does not match", giraffe.getId(), 6);
   }
 
   /**
    * <p>
-   * Giraffe seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Giraffe seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) giraffe.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) giraffe.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) giraffe.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) giraffe.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Giraffe seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Giraffe seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", giraffe.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", giraffe.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class GiraffeTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", giraffe.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", giraffe.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class GiraffeTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", giraffe.getAnimalDiet().isHerbivore());
+    assertTrue("Diet does not match", giraffe.getAnimalDiet().isHerbivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class GiraffeTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", giraffe.getLandAnimal());
-    assertFalse("Water type matches", giraffe.getWaterAnimal());
-    assertFalse("Air type matches", giraffe.getAirAnimal());
+    assertTrue("Land type does not match", giraffe.getLandAnimal());
+    assertFalse("Water type does not match", giraffe.getWaterAnimal());
+    assertFalse("Air type does not match", giraffe.getAirAnimal());
   }
 
   /**

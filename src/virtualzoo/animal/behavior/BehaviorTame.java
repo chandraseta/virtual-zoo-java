@@ -10,7 +10,7 @@ package virtualzoo.animal.behavior;
 public class BehaviorTame extends AnimalBehavior {
 
   /**
-   * Constructor
+   * Constructor.
    */
   public BehaviorTame() {
     super();

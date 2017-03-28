@@ -18,47 +18,47 @@ import virtualzoo.misc.Person;
  */
 public class Zoo {
   /**
-   * Konstanta panjang taman default
+   * Konstanta panjang taman default.
    */
   public static final int DEF_LENGTH = 20;
 
   /**
-   * Konstanta lebar taman default
+   * Konstanta lebar taman default.
    */
   public static final int DEF_WIDTH = 20;
 
   /**
-   * Matriks yang berisi setiap Cell yang membentuk Zoo
+   * Matriks yang berisi setiap Cell yang membentuk Zoo.
    */
-  private Cell map[][];
+  private Cell[][] map;
 
   /**
-   * Matriks char yang merepresentasikan Cell yang ada di Zoo
+   * Matriks char yang merepresentasikan Cell yang ada di Zoo.
    */
-  private char mapChar[][];
+  private char[][] mapChar;
 
   /**
-   * Panjang Zoo
+   * Panjang Zoo.
    */
   private int length;
 
   /**
-   * Lebar Zoo
+   * Lebar Zoo.
    */
   private int width;
 
   /**
-   * Berisi Cage yang ada di Zoo
+   * Berisi Cage yang ada di Zoo.
    */
   private Vector<Cage> cages = new Vector<Cage>();
 
   /**
-   * Berisi Point yang dapat menjadi pintu masuk Zoo
+   * Berisi Point yang dapat menjadi pintu masuk Zoo.
    */
   private Set<Point> entrance = new HashSet<Point>();
 
   /**
-   * Berisi Point yang dapat menjadi pintu keluar Zoo
+   * Berisi Point yang dapat menjadi pintu keluar Zoo.
    */
   private Set<Point> exit = new HashSet<Point>();
 
@@ -80,10 +80,10 @@ public class Zoo {
   }
 
   /**
-   * Constructor
-   * Mengalokasikan Zoo kosong dengan ukuran width x length
-   * @param length Panjang zoo
-   * @param width Lebar zoo
+   * Constructor.
+   * Mengalokasikan Zoo kosong dengan ukuran width x length.
+   * @param length Panjang zoo.
+   * @param width Lebar zoo.
    */
   public Zoo(int length, int width) {
     this.length = length;
@@ -99,16 +99,16 @@ public class Zoo {
   }
 
   /**
-   * Getter panjang dari zoo
-   * @return zoo.length
+   * Getter panjang dari zoo.
+   * @return zoo.length.
    */
   public int getLength() {
     return length;
   }
 
   /**
-   * Getter lebar dari zoo
-   * @return zoo.width
+   * Getter lebar dari zoo.
+   * @return zoo.width.
    */
   public int getWidth() {
     return width;
@@ -142,9 +142,11 @@ public class Zoo {
   }
 
   /**
-   * @return Matriks char dari map zoo
+   * @return Matriks char dari map zoo.
    */
-  public char[][] getMapChar() { return mapChar; }
+  public char[][] getMapChar() {
+    return mapChar;
+  }
 
   /**
    * @return Set berisi point lokasi entrance zoo.
@@ -178,7 +180,7 @@ public class Zoo {
   /**
    * Menghilangkan cage pada indeks ke-i dari zoo.
    * @param i Indeks cage yang ingin dihilangkan.
-   * @return Cage yang dihapus
+   * @return Cage yang dihapus.
    */
   public Cage removeCage(int i) {
     if (i >= 0 && i < cages.size()) {
@@ -211,8 +213,8 @@ public class Zoo {
       }
     }
     Point p = visitor.getPosition();
-    if (p.getX() >= 0 && p.getX() < length &&
-        p.getY() >= 0 && p.getY() < width) {
+    if (p.getX() >= 0 && p.getX() < length
+        && p.getY() >= 0 && p.getY() < width) {
       mapChar[(int) p.getY()][(int) p.getX()] = visitor.render();
     }
   }

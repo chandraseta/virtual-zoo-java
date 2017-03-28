@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class KomodoTest {
   private Komodo komodo;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Komodo untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Komodo.
    */
-  public KomodoTest(int locX, int locY, int animalWeight) {
-    komodo = new Komodo(locX, locY, animalWeight);
+  @Before
+  public void KomodoSetUpTest() {
+    komodo = new Komodo(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class KomodoTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", komodo.getId(), 10);
+    assertEquals("ID does not match", komodo.getId(), 10);
   }
 
   /**
    * <p>
-   * Komodo seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Komodo seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) komodo.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) komodo.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) komodo.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) komodo.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Komodo seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Komodo seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", komodo.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", komodo.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class KomodoTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", komodo.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", komodo.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class KomodoTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", komodo.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", komodo.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class KomodoTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", komodo.getLandAnimal());
-    assertFalse("Water type matches", komodo.getWaterAnimal());
-    assertFalse("Air type matches", komodo.getAirAnimal());
+    assertTrue("Land type does not match", komodo.getLandAnimal());
+    assertFalse("Water type does not match", komodo.getWaterAnimal());
+    assertFalse("Air type does not match", komodo.getAirAnimal());
   }
 
   /**

@@ -9,44 +9,45 @@ import virtualzoo.misc.Person;
 
 /**
  * Kelas Zoo merupakan kelas untuk memfasilitasi
- * tour pada Zoo
+ * tour pada Zoo.
  *
  * @author Felix Limanta - 13515065
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public class ZooTour {
 
   /**
-   * Zoo yang akan dijelajahi
+   * Zoo yang akan dijelajahi.
    */
   private Zoo zoo;
 
   /**
-   * Point batas kiri atas Zoo
+   * Point batas kiri atas Zoo.
    */
   private Point upperLeft;
 
   /**
-   * Point batas kanan bawah Zoo
+   * Point batas kanan bawah Zoo.
    */
   private Point lowerRight;
 
   /**
-   * Visitor yang akan menjelajahi Zoo
+   * Visitor yang akan menjelajahi Zoo.
    */
   private Person visitor;
 
   /**
    * Matriks yang menandakan apakah suatu petak
-   * sudah dikunjungi atau belum
+   * sudah dikunjungi atau belum.
    */
-  private boolean visited[][];
+  private boolean[][] visited;
 
   /**
-   * Konstruktor
-   * Memanggil mode Tour Zoo
-   * @param zoo Zoo yang akan dijelajahi
+   * Konstruktor.
+   * Memanggil mode Tour Zoo.
+   *
+   * @param zoo Zoo yang akan dijelajahi.
    */
   public ZooTour(Zoo zoo) {
     this.zoo = zoo;
@@ -62,7 +63,7 @@ public class ZooTour {
 
   /**
    * Menginisialisasi matriks telah dikunjungi
-   * berdasarkan apakah suatu petak dapat dikunjungi
+   * berdasarkan apakah suatu petak dapat dikunjungi.
    */
   private void initializeMatrixOfVisited() {
     visited = new boolean[zoo.getWidth()][zoo.getLength()];
@@ -74,13 +75,13 @@ public class ZooTour {
   }
 
   /**
-   * Memilih tempat masuk Visitor secara acak dan
+   * Memilih tempat masuk Visitor secara acak.
    */
   private void chooseEntrance() {
     Set<Point> entrance = zoo.getEntrance();
-    int entranceNo = ThreadLocalRandom.current().nextInt(0,entrance.size());
+    int entranceNo = ThreadLocalRandom.current().nextInt(0, entrance.size());
     int i = 0;
-    for (Point p: entrance) {
+    for (Point p : entrance) {
       if (i == entranceNo) {
         visitor.setPosition(p);
         visited[(int) p.getY()][(int) p.getX()] = true;
@@ -91,13 +92,13 @@ public class ZooTour {
 
   /**
    * Menjelajahi Zoo sampai menemui pintu keluar atau
-   * tidak dapat bergerak
+   * tidak dapat bergerak.
    */
   private void tourZoo() {
     boolean onExit;
     boolean hasMovesLeft = true;
-    upperLeft = new Point(0,0);
-    lowerRight = new Point(zoo.getLength()-1, zoo.getWidth()-1);
+    upperLeft = new Point(0, 0);
+    lowerRight = new Point(zoo.getLength() - 1, zoo.getWidth() - 1);
     do {
       printZoo();
       interactWithAnimals();
@@ -120,7 +121,7 @@ public class ZooTour {
   }
 
   /**
-   * Menampilkan kondisi Zoo saat setelah pergerakan Visitor dan Animal
+   * Menampilkan kondisi Zoo saat setelah pergerakan Visitor dan Animal.
    */
   private void printZoo() {
     System.out.print("\033[H\033[2J");
@@ -130,23 +131,23 @@ public class ZooTour {
   }
 
   /**
-   * Menampilkan interaksi Visitor dengan Animal
+   * Menampilkan interaksi Visitor dengan Animal.
    */
   private void interactWithAnimals() {
     Point visitorLoc = visitor.getPosition();
-    for (Cage c: zoo.getCages()) {
+    for (Cage c : zoo.getCages()) {
       Point up = new Point((int) visitorLoc.getX(), (int) visitorLoc.getY() - 1);
       Point down = new Point((int) visitorLoc.getX(), (int) visitorLoc.getY() + 1);
       Point left = new Point((int) visitorLoc.getX() - 1, (int) visitorLoc.getY());
       Point right = new Point((int) visitorLoc.getX() + 1, (int) visitorLoc.getY());
-      boolean isCageAdjacent = c.getArea().contains(up) ||
-          c.getArea().contains(down) ||
-          c.getArea().contains(left) ||
-          c.getArea().contains(right);
+      boolean isCageAdjacent = c.getArea().contains(up)
+          || c.getArea().contains(down)
+          || c.getArea().contains(left)
+          || c.getArea().contains(right);
 
       if (isCageAdjacent) {
         System.out.println();
-        for (Animal a: c.getAnimal()) {
+        for (Animal a : c.getAnimal()) {
           a.interact();
         }
       }
@@ -154,20 +155,21 @@ public class ZooTour {
   }
 
   /**
-   * Menggerakan Visitor secara acak ke petak yang belum pernah dikunjungi
-   * @return Apakah Visitor masih dapat bergerak
+   * Menggerakan Visitor secara acak ke petak yang belum pernah dikunjungi.
+   *
+   * @return Apakah Visitor masih dapat bergerak.
    */
   private boolean moveVisitor() {
     boolean movementInRange;
     Point loc;
     int noOfTries = 0;
 
-    int movement = ThreadLocalRandom.current().nextInt(0,4);
+    int movement = ThreadLocalRandom.current().nextInt(0, 4);
     do {
       visitor.move(movement);
       loc = visitor.getPosition();
-      movementInRange = (loc.y >= 0 && loc.y < zoo.getWidth() &&
-                        loc.x >= 0 && loc.x < zoo.getLength());
+      movementInRange = (loc.y >= 0 && loc.y < zoo.getWidth()
+          && loc.x >= 0 && loc.x < zoo.getLength());
       if (movementInRange) {
         movementInRange = !visited[loc.y][loc.x];
       }
@@ -188,10 +190,10 @@ public class ZooTour {
   }
 
   /**
-   * Menggerakan semua Animal di Cage secara acak
+   * Menggerakan semua Animal di Cage secara acak.
    */
   private void moveAnimals() {
-    for (Cage c: zoo.getCages()) {
+    for (Cage c : zoo.getCages()) {
       c.moveAnimal();
     }
   }

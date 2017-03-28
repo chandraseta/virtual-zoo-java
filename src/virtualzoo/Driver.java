@@ -3,29 +3,30 @@ package virtualzoo;
 import java.io.IOException;
 import java.util.Scanner;
 import virtualzoo.zoo.Zoo;
-import virtualzoo.zoo.ZooReader;
 import virtualzoo.zoo.ZooDisplay;
-import virtualzoo.zoo.ZooTour;
 import virtualzoo.zoo.ZooFood;
+import virtualzoo.zoo.ZooReader;
+import virtualzoo.zoo.ZooTour;
 
 /**
  * Kelas driver Virtual Zoo
  *
  * @author Felix Limanta - 13515065
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public class Driver {
 
   /**
-   * Zoo yang ada saat ini
+   * Zoo yang ada saat ini.
    */
   private Zoo zoo;
 
   /**
-   * Constructor
-   * Antarmuka untuk masuk ke fitur-fitur yang ada di Virtual Zoo
-   * @throws IOException
+   * Constructor.
+   * Antarmuka untuk masuk ke fitur-fitur yang ada di Virtual Zoo.
+   *
+   * @throws IOException Dilempar jika gagal terdapat kesalahan dalam membaca.
    */
   public Driver() throws IOException {
     zoo = new ZooReader("layout.in").getZoo();
@@ -50,11 +51,16 @@ public class Driver {
 
       switch (n) {
         case 1:
-          new ZooDisplay(zoo).displayZoo(); break;
+          new ZooDisplay(zoo).displayZoo();
+          break;
         case 2:
-          new ZooTour(zoo); break;
+          new ZooTour(zoo);
+          break;
         case 3:
-          new ZooFood(zoo).displayTotalFood(); break;
+          new ZooFood(zoo).displayTotalFood();
+          break;
+        default:
+          break;
       }
     } while (n != 0);
   }

@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.aves.Eagle;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class EagleTest {
   private Eagle eagle;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Eagle untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Eagle.
    */
-  public EagleTest(int locX, int locY, int animalWeight) {
-    eagle = new Eagle(locX, locY, animalWeight);
+  @Before
+  public void EagleSetUpTest() {
+    eagle = new Eagle(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class EagleTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", eagle.getId(), 17);
+    assertEquals("ID does not match", eagle.getId(), 17);
   }
 
   /**
    * <p>
-   * Eagle seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Eagle seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) eagle.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) eagle.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) eagle.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) eagle.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Eagle seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Eagle seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", eagle.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", eagle.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class EagleTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", eagle.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", eagle.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class EagleTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", eagle.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", eagle.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class EagleTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", eagle.getLandAnimal());
-    assertFalse("Water type matches", eagle.getWaterAnimal());
-    assertTrue("Air type matches", eagle.getAirAnimal());
+    assertTrue("Land type does not match", eagle.getLandAnimal());
+    assertFalse("Water type does not match", eagle.getWaterAnimal());
+    assertTrue("Air type does not match", eagle.getAirAnimal());
   }
 
   /**

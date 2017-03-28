@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class BarracudaTest {
   private Barracuda barracuda;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Barracuda untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Barracuda.
    */
-  public BarracudaTest(int locX, int locY, int animalWeight) {
-    barracuda = new Barracuda(locX, locY, animalWeight);
+  @Before
+  public void BarracudaSetUpTest() {
+    barracuda = new Barracuda(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class BarracudaTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", barracuda.getId(), 15);
+    assertEquals("ID does not match", barracuda.getId(), 15);
   }
 
   /**
    * <p>
-   * Barracuda seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Barracuda seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) barracuda.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) barracuda.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) barracuda.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) barracuda.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Barracuda seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Barracuda seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", barracuda.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", barracuda.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class BarracudaTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", barracuda.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", barracuda.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class BarracudaTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", barracuda.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", barracuda.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class BarracudaTest {
    */
   @Test
   public void matchType() {
-    assertFalse("Land type matches", barracuda.getLandAnimal());
-    assertTrue("Water type matches", barracuda.getWaterAnimal());
-    assertFalse("Air type matches", barracuda.getAirAnimal());
+    assertFalse("Land type does not match", barracuda.getLandAnimal());
+    assertTrue("Water type does not match", barracuda.getWaterAnimal());
+    assertFalse("Air type does not match", barracuda.getAirAnimal());
   }
 
   /**

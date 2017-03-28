@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.mammalia.Lion;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class LionTest {
   private Lion lion;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Lion untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Lion.
    */
-  public LionTest(int locX, int locY, int animalWeight) {
-    lion = new Lion(locX, locY, animalWeight);
+  @Before
+  public void LionSetUpTest() {
+    lion = new Lion(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class LionTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", lion.getId(), 2);
+    assertEquals("ID does not match", lion.getId(), 2);
   }
 
   /**
    * <p>
-   * Lion seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Lion seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) lion.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) lion.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) lion.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) lion.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Lion seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Lion seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", lion.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", lion.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class LionTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", lion.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", lion.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class LionTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", lion.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", lion.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class LionTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", lion.getLandAnimal());
-    assertFalse("Water type matches", lion.getWaterAnimal());
-    assertFalse("Air type matches", lion.getAirAnimal());
+    assertTrue("Land type does not match", lion.getLandAnimal());
+    assertFalse("Water type does not match", lion.getWaterAnimal());
+    assertFalse("Air type does not match", lion.getAirAnimal());
   }
 
   /**

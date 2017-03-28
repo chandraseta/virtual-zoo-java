@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class MonkeyTest {
   private Monkey monkey;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Monkey untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Monkey.
    */
-  public MonkeyTest(int locX, int locY, int animalWeight) {
-    monkey = new Monkey(locX, locY, animalWeight);
+  @Before
+  public void MonkeySetUpTest() {
+    monkey = new Monkey(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class MonkeyTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", monkey.getId(), 5);
+    assertEquals("ID does not match", monkey.getId(), 5);
   }
 
   /**
    * <p>
-   * Monkey seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Monkey seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) monkey.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) monkey.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) monkey.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) monkey.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Monkey seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Monkey seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", monkey.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", monkey.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class MonkeyTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", monkey.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", monkey.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class MonkeyTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", monkey.getAnimalDiet().isOmnivore());
+    assertTrue("Diet does not match", monkey.getAnimalDiet().isOmnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class MonkeyTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", monkey.getLandAnimal());
-    assertFalse("Water type matches", monkey.getWaterAnimal());
-    assertFalse("Air type matches", monkey.getAirAnimal());
+    assertTrue("Land type does not match", monkey.getLandAnimal());
+    assertFalse("Water type does not match", monkey.getWaterAnimal());
+    assertFalse("Air type does not match", monkey.getAirAnimal());
   }
 
   /**

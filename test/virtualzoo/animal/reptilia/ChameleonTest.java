@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class ChameleonTest {
   private Chameleon chameleon;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Chameleon untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Chameleon.
    */
-  public ChameleonTest(int locX, int locY, int animalWeight) {
-    chameleon = new Chameleon(locX, locY, animalWeight);
+  @Before
+  public void ChameleonSetUpTest() {
+    chameleon = new Chameleon(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class ChameleonTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", chameleon.getId(), 12);
+    assertEquals("ID does not match", chameleon.getId(), 12);
   }
 
   /**
    * <p>
-   * Chameleon seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Chameleon seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) chameleon.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) chameleon.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) chameleon.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) chameleon.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Chameleon seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Chameleon seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", chameleon.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", chameleon.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class ChameleonTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", chameleon.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", chameleon.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class ChameleonTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", chameleon.getAnimalDiet().isOmnivore());
+    assertTrue("Diet does not match", chameleon.getAnimalDiet().isOmnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class ChameleonTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", chameleon.getLandAnimal());
-    assertFalse("Water type matches", chameleon.getWaterAnimal());
-    assertFalse("Air type matches", chameleon.getAirAnimal());
+    assertTrue("Land type does not match", chameleon.getLandAnimal());
+    assertFalse("Water type does not match", chameleon.getWaterAnimal());
+    assertFalse("Air type does not match", chameleon.getAirAnimal());
   }
 
   /**

@@ -1,12 +1,5 @@
 package virtualzoo.zoo;
 
-import virtualzoo.animal.*;
-import virtualzoo.animal.aves.*;
-import virtualzoo.animal.mammalia.*;
-import virtualzoo.animal.pisces.*;
-import virtualzoo.animal.reptilia.*;
-import virtualzoo.infrastructure.facility.*;
-import virtualzoo.infrastructure.habitat.*;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -15,6 +8,37 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
+import virtualzoo.animal.Animal;
+import virtualzoo.animal.aves.Colibri;
+import virtualzoo.animal.aves.Duck;
+import virtualzoo.animal.aves.Eagle;
+import virtualzoo.animal.aves.Owl;
+import virtualzoo.animal.aves.Peacock;
+import virtualzoo.animal.aves.WildColibri;
+import virtualzoo.animal.mammalia.Elephant;
+import virtualzoo.animal.mammalia.Giraffe;
+import virtualzoo.animal.mammalia.Lion;
+import virtualzoo.animal.mammalia.Monkey;
+import virtualzoo.animal.mammalia.Tiger;
+import virtualzoo.animal.mammalia.WildBunny;
+import virtualzoo.animal.mammalia.Wolf;
+import virtualzoo.animal.mammalia.Zebra;
+import virtualzoo.animal.pisces.Barracuda;
+import virtualzoo.animal.pisces.Clownfish;
+import virtualzoo.animal.pisces.Shark;
+import virtualzoo.animal.reptilia.Chameleon;
+import virtualzoo.animal.reptilia.Crocodile;
+import virtualzoo.animal.reptilia.Iguana;
+import virtualzoo.animal.reptilia.Komodo;
+import virtualzoo.animal.reptilia.Python;
+import virtualzoo.infrastructure.facility.Park;
+import virtualzoo.infrastructure.facility.Restaurant;
+import virtualzoo.infrastructure.facility.Road;
+import virtualzoo.infrastructure.facility.RoadEntrance;
+import virtualzoo.infrastructure.facility.RoadExit;
+import virtualzoo.infrastructure.habitat.AirHabitat;
+import virtualzoo.infrastructure.habitat.LandHabitat;
+import virtualzoo.infrastructure.habitat.WaterHabitat;
 
 /**
  * Kelas Zoo merupakan kelas boundary untuk membaca
@@ -22,20 +46,21 @@ import java.util.Queue;
  *
  * @author Felix Limanta - 13515065
  * @version 3.0
- * @since   3.0
+ * @since 3.0
  */
 public class ZooReader {
 
   /**
-   * Atribut untuk menyimpan zoo yang dibaca dari file
+   * Atribut untuk menyimpan zoo yang dibaca dari file.
    */
   private Zoo zoo;
 
   /**
    * Konstruktor
-   * Membaca zoo berdasarkan nama file yang diberikan
-   * @param filename Nama file yang akan dibuka
-   * @throws IOException Jika gagal buka atau gagal baca
+   * Membaca zoo berdasarkan nama file yang diberikan.
+   *
+   * @param filename Nama file yang akan dibuka.
+   * @throws IOException Jika gagal buka atau gagal baca.
    */
   public ZooReader(String filename) throws IOException {
     FileInputStream fstream;
@@ -46,7 +71,6 @@ public class ZooReader {
     in = new DataInputStream(fstream);
     br = new BufferedReader(new InputStreamReader(in));
 
-
     readMap(br);
     readCages(br);
 
@@ -56,53 +80,66 @@ public class ZooReader {
   }
 
   /**
-   * Getter zoo
-   * @return Zoo yang telah dibaca
+   * Getter zoo.
+   *
+   * @return Zoo yang telah dibaca.
    */
   public Zoo getZoo() {
     return zoo;
   }
 
   /**
-   * Membaca map dari file
-   * @param br Buffer pembacaan
-   * @throws IOException Jika gagal membaca
+   * Membaca map dari file.
+   *
+   * @param br Buffer pembacaan.
+   * @throws IOException Jika gagal membaca.
    */
   private void readMap(BufferedReader br) throws IOException {
     String[] strSplit = br.readLine().split("\\s+");
     int length = Integer.parseInt(strSplit[0]);
     int width = Integer.parseInt(strSplit[1]);
-    zoo = new Zoo(length,width);
+    zoo = new Zoo(length, width);
 
     for (int i = 0; i < Zoo.DEF_WIDTH; ++i) {
       String strLine = br.readLine();
       for (int j = 0; j < Zoo.DEF_LENGTH; ++j) {
         switch (strLine.charAt(j)) {
           case 'w':
-            zoo.setTile(new WaterHabitat(),i,j); break;
+            zoo.setTile(new WaterHabitat(), i, j);
+            break;
           case 'l':
-            zoo.setTile(new LandHabitat(),i,j); break;
+            zoo.setTile(new LandHabitat(), i, j);
+            break;
           case 'a':
-            zoo.setTile(new AirHabitat(),i,j); break;
+            zoo.setTile(new AirHabitat(), i, j);
+            break;
           case '.':
-            zoo.setTile(new Road(true),i,j); break;
+            zoo.setTile(new Road(true), i, j);
+            break;
           case '>':
-            zoo.setTile(new RoadEntrance(true),i,j); break;
+            zoo.setTile(new RoadEntrance(true), i, j);
+            break;
           case '<':
-            zoo.setTile(new RoadExit(true),i,j); break;
+            zoo.setTile(new RoadExit(true), i, j);
+            break;
           case '*':
-            zoo.setTile(new Park(false,""),i,j); break;
+            zoo.setTile(new Park(false, ""), i, j);
+            break;
           case 'R':
-            zoo.setTile(new Restaurant(false,""),i,j); break;
+            zoo.setTile(new Restaurant(false, ""), i, j);
+            break;
+          default:
+            break;
         }
       }
     }
   }
 
   /**
-   * Membaca cage yang berisi area dan animal dari file
-   * @param br Buffer pembacaan
-   * @throws IOException jika gagal membaca file
+   * Membaca cage yang berisi area dan animal dari file.
+   *
+   * @param br Buffer pembacaan.
+   * @throws IOException jika gagal membaca file.
    */
   private void readCages(BufferedReader br) throws IOException {
     String strLine = br.readLine();
@@ -112,10 +149,10 @@ public class ZooReader {
 
       strLine = br.readLine();
       while (strLine.charAt(0) != '-') {
-        String [] strSplit = strLine.split("\\s+");
+        String[] strSplit = strLine.split("\\s+");
         int y = Integer.parseInt(strSplit[0]);
         int x = Integer.parseInt(strSplit[1]);
-        c.addPoint(new Point(x,y));
+        c.addPoint(new Point(x, y));
 
         strLine = br.readLine();
       }
@@ -123,62 +160,63 @@ public class ZooReader {
       strLine = br.readLine();
       Queue<Animal> wildAnimals = new LinkedList<>();
       while (strLine.charAt(0) != '#') {
-        String [] strSplit = strLine.split("\\s+");
+        String[] strSplit = strLine.split("\\s+");
         String species = strSplit[0];
         int y = Integer.parseInt(strSplit[1]);
         int x = Integer.parseInt(strSplit[2]);
         int w = Integer.parseInt(strSplit[3]);
 
         if (species.equals("Wolf")) {
-          c.addAnimal(new Wolf(x,y,w));
+          c.addAnimal(new Wolf(x, y, w));
         } else if (species.equals("Lion")) {
-          c.addAnimal(new Lion(x,y,w));
+          c.addAnimal(new Lion(x, y, w));
         } else if (species.equals("Tiger")) {
-          c.addAnimal(new Tiger(x,y,w));
+          c.addAnimal(new Tiger(x, y, w));
         } else if (species.equals("Zebra")) {
-          c.addAnimal(new Zebra(x,y,w));
+          c.addAnimal(new Zebra(x, y, w));
         } else if (species.equals("Monkey")) {
-          c.addAnimal(new Monkey(x,y,w));
+          c.addAnimal(new Monkey(x, y, w));
         } else if (species.equals("Giraffe")) {
-          c.addAnimal(new Giraffe(x,y,w));
+          c.addAnimal(new Giraffe(x, y, w));
         } else if (species.equals("Elephant")) {
-          c.addAnimal(new Elephant(x,y,w));
+          c.addAnimal(new Elephant(x, y, w));
         } else if (species.equals("Crocodile")) {
-          c.addAnimal(new Crocodile(x,y,w));
+          c.addAnimal(new Crocodile(x, y, w));
         } else if (species.equals("Python")) {
-          c.addAnimal(new Python(x,y,w));
+          c.addAnimal(new Python(x, y, w));
         } else if (species.equals("Komodo")) {
-          c.addAnimal(new Komodo(x,y,w));
+          c.addAnimal(new Komodo(x, y, w));
         } else if (species.equals("Iguana")) {
-          c.addAnimal(new Iguana(x,y,w));
+          c.addAnimal(new Iguana(x, y, w));
         } else if (species.equals("Chameleon")) {
-          c.addAnimal(new Chameleon(x,y,w));
+          c.addAnimal(new Chameleon(x, y, w));
         } else if (species.equals("Shark")) {
-          c.addAnimal(new Shark(x,y,w));
+          c.addAnimal(new Shark(x, y, w));
         } else if (species.equals("Clownfish")) {
-          c.addAnimal(new Clownfish(x,y,w));
+          c.addAnimal(new Clownfish(x, y, w));
         } else if (species.equals("Barracuda")) {
-          c.addAnimal(new Barracuda(x,y,w));
+          c.addAnimal(new Barracuda(x, y, w));
         } else if (species.equals("Owl")) {
-          c.addAnimal(new Owl(x,y,w));
+          c.addAnimal(new Owl(x, y, w));
         } else if (species.equals("Eagle")) {
-          c.addAnimal(new Eagle(x,y,w));
+          c.addAnimal(new Eagle(x, y, w));
         } else if (species.equals("Colibri")) {
-          c.addAnimal(new Colibri(x,y,w));
+          c.addAnimal(new Colibri(x, y, w));
         } else if (species.equals("Peacock")) {
-          c.addAnimal(new Peacock(x,y,w));
+          c.addAnimal(new Peacock(x, y, w));
         } else if (species.equals("Duck")) {
-          c.addAnimal(new Duck(x,y,w));
+          c.addAnimal(new Duck(x, y, w));
         } else if (species.equals("WildColibri")) {
-          wildAnimals.add(new WildColibri(x,y,w));
+          wildAnimals.add(new WildColibri(x, y, w));
         } else {
-          wildAnimals.add(new WildBunny(x,y,w));
+          wildAnimals.add(new WildBunny(x, y, w));
         }
         strLine = br.readLine();
       }
 
-      while (!wildAnimals.isEmpty())
+      while (!wildAnimals.isEmpty()) {
         c.addAnimal(wildAnimals.remove());
+      }
 
       zoo.addCage(c);
     }

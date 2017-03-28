@@ -1,6 +1,5 @@
 package virtualzoo.animal.behavior;
 
-
 import java.util.HashSet;
 
 /**
@@ -13,7 +12,7 @@ import java.util.HashSet;
 public class BehaviorWild extends AnimalBehavior {
 
   /**
-   * Constructor
+   * Constructor.
    */
   public BehaviorWild() {
     super();

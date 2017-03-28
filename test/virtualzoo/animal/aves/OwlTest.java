@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.aves.Owl;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class OwlTest {
   private Owl owl;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Owl untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Owl.
    */
-  public OwlTest(int locX, int locY, int animalWeight) {
-    owl = new Owl(locX, locY, animalWeight);
+  @Before
+  public void OwlSetUpTest() {
+    owl = new Owl(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class OwlTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", owl.getId(), 16);
+    assertEquals("ID does not match", owl.getId(), 16);
   }
 
   /**
    * <p>
-   * Owl seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Owl seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) owl.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) owl.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) owl.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) owl.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Owl seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Owl seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", owl.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", owl.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class OwlTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", owl.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", owl.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class OwlTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", owl.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", owl.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class OwlTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", owl.getLandAnimal());
-    assertFalse("Water type matches", owl.getWaterAnimal());
-    assertTrue("Air type matches", owl.getAirAnimal());
+    assertTrue("Land type does not match", owl.getLandAnimal());
+    assertFalse("Water type does not match", owl.getWaterAnimal());
+    assertTrue("Air type does not match", owl.getAirAnimal());
   }
 
   /**

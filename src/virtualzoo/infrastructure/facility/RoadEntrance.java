@@ -14,6 +14,7 @@ public class RoadEntrance extends Road {
    *
    * Kelas RoadEntrance mendefinisikan atribut untuk jalan masuk.
    * </p>
+   * @param accessible Nilai jalan bisa diakses atau tidak.
    */
   public RoadEntrance(boolean accessible) {
     super(accessible);

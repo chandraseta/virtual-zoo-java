@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class ClownfishTest {
   private Clownfish clownfish;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Clownfish untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Clownfish.
    */
-  public ClownfishTest(int locX, int locY, int animalWeight) {
-    clownfish = new Clownfish(locX, locY, animalWeight);
+  @Before
+  public void ClownfishSetUpTest() {
+    clownfish = new Clownfish(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class ClownfishTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", clownfish.getId(), 14);
+    assertEquals("ID does not match", clownfish.getId(), 14);
   }
 
   /**
    * <p>
-   * Clownfish seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Clownfish seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) clownfish.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) clownfish.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) clownfish.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) clownfish.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Clownfish seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Clownfish seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", clownfish.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", clownfish.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class ClownfishTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", clownfish.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", clownfish.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class ClownfishTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", clownfish.getAnimalDiet().isOmnivore());
+    assertTrue("Diet does not match", clownfish.getAnimalDiet().isOmnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class ClownfishTest {
    */
   @Test
   public void matchType() {
-    assertFalse("Land type matches", clownfish.getLandAnimal());
-    assertTrue("Water type matches", clownfish.getWaterAnimal());
-    assertFalse("Air type matches", clownfish.getAirAnimal());
+    assertFalse("Land type does not match", clownfish.getLandAnimal());
+    assertTrue("Water type does not match", clownfish.getWaterAnimal());
+    assertFalse("Air type does not match", clownfish.getAirAnimal());
   }
 
   /**

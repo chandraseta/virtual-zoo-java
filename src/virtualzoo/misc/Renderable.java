@@ -14,7 +14,11 @@ public interface Renderable {
    * <p>
    * Untuk render ke layar
    * Didefiniskan pada kelas turunan.
+<<<<<<< HEAD
+   * @return Karakter untuk proses render.
+=======
    * </p>
+>>>>>>> 72f414ce1b88db05335267fca453e757cc1252b9
    */
   char render();
 }

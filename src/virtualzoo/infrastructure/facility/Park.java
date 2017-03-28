@@ -19,6 +19,8 @@ public class Park extends Facility {
    *
    * Membuat sebuah taman.
    * </p>
+   * @param accessible Nilai park bisa diakses atau tidak.
+   * @param facilityName Nama park.
    */
   public Park(boolean accessible, String facilityName) {
     super(accessible);

@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
-import virtualzoo.animal.aves.Peacock;
 
 /**
  * <p>
@@ -21,16 +21,14 @@ public class PeacockTest {
   private Peacock peacock;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Peacock untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Peacock.
    */
-  public PeacockTest(int locX, int locY, int animalWeight) {
-    peacock = new Peacock(locX, locY, animalWeight);
+  @Before
+  public void PeacockSetUpTest() {
+    peacock = new Peacock(2, 3, 80);
   }
 
   /**
@@ -40,31 +38,28 @@ public class PeacockTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", peacock.getId(), 19);
+    assertEquals("ID does not match", peacock.getId(), 19);
   }
 
   /**
    * <p>
-   * Peacock seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Peacock seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) peacock.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) peacock.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) peacock.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) peacock.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Peacock seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Peacock seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", peacock.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", peacock.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -74,7 +69,7 @@ public class PeacockTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", peacock.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", peacock.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -84,7 +79,7 @@ public class PeacockTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", peacock.getAnimalDiet().isOmnivore());
+    assertTrue("Diet does not match", peacock.getAnimalDiet().isOmnivore());
   }
 
   /**
@@ -94,9 +89,9 @@ public class PeacockTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", peacock.getLandAnimal());
-    assertFalse("Water type matches", peacock.getWaterAnimal());
-    assertFalse("Air type matches", peacock.getAirAnimal());
+    assertTrue("Land type does not match", peacock.getLandAnimal());
+    assertFalse("Water type does not match", peacock.getWaterAnimal());
+    assertFalse("Air type does not match", peacock.getAirAnimal());
   }
 
   /**

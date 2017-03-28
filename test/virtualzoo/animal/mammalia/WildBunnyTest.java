@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class WildBunnyTest {
   private WildBunny wildBunny;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat WildBunny untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat WildBunny.
    */
-  public WildBunnyTest(int locX, int locY, int animalWeight) {
-    wildBunny = new WildBunny(locX, locY, animalWeight);
+  @Before
+  public void WildBunnySetUpTest() {
+    wildBunny = new WildBunny(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class WildBunnyTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", wildBunny.getId(), 0);
+    assertEquals("ID does not match", wildBunny.getId(), 0);
   }
 
   /**
    * <p>
-   * WildBunny seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * WildBunny seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) wildBunny.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) wildBunny.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) wildBunny.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) wildBunny.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * WildBunny seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * WildBunny seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", wildBunny.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", wildBunny.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class WildBunnyTest {
    */
   @Test
   public void matchBehavior() {
-    assertTrue("Behavior matches", wildBunny.getAnimalBehavior().getBehavior());
+    assertTrue("Behavior does not match", wildBunny.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class WildBunnyTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", wildBunny.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", wildBunny.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class WildBunnyTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", wildBunny.getLandAnimal());
-    assertFalse("Water type matches", wildBunny.getWaterAnimal());
-    assertTrue("Air type matches", wildBunny.getAirAnimal());
+    assertTrue("Land type does not match", wildBunny.getLandAnimal());
+    assertFalse("Water type does not match", wildBunny.getWaterAnimal());
+    assertTrue("Air type does not match", wildBunny.getAirAnimal());
   }
 
   /**

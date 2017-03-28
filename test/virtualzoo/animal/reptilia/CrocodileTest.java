@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class CrocodileTest {
   private Crocodile crocodile;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Crocodile untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Crocodile.
    */
-  public CrocodileTest(int locX, int locY, int animalWeight) {
-    crocodile = new Crocodile(locX, locY, animalWeight);
+  @Before
+  public void CrocodileSetUpTest() {
+    crocodile = new Crocodile(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class CrocodileTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", crocodile.getId(), 8);
+    assertEquals("ID does not match", crocodile.getId(), 8);
   }
 
   /**
    * <p>
-   * Crocodile seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Crocodile seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) crocodile.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) crocodile.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) crocodile.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) crocodile.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Crocodile seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Crocodile seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", crocodile.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", crocodile.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class CrocodileTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", crocodile.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", crocodile.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class CrocodileTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", crocodile.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", crocodile.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class CrocodileTest {
    */
   @Test
   public void matchType() {
-    assertTrue("Land type matches", crocodile.getLandAnimal());
-    assertTrue("Water type matches", crocodile.getWaterAnimal());
-    assertFalse("Air type matches", crocodile.getAirAnimal());
+    assertTrue("Land type does not match", crocodile.getLandAnimal());
+    assertTrue("Water type does not match", crocodile.getWaterAnimal());
+    assertFalse("Air type does not match", crocodile.getAirAnimal());
   }
 
   /**

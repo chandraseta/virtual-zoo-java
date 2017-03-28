@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -20,16 +21,14 @@ public class SharkTest {
   private Shark shark;
 
   /**
-   * Constructor.
+   * Before.
    * <p>
    * Membuat Shark untuk menjalani test.
    * </p>
-   * @param locX Nilai absis posisi.
-   * @param locY Nilai ordinat posisi.
-   * @param animalWeight Nilai berat Shark.
    */
-  public SharkTest(int locX, int locY, int animalWeight) {
-    shark = new Shark(locX, locY, animalWeight);
+  @Before
+  public void SharkSetUpTest() {
+    shark = new Shark(2, 3, 80);
   }
 
   /**
@@ -39,31 +38,28 @@ public class SharkTest {
    */
   @Test
   public void matchId() {
-    assertEquals("ID matches", shark.getId(), 13);
+    assertEquals("ID does not match", shark.getId(), 13);
   }
 
   /**
    * <p>
-   * Shark seharusnya terletak di (locX,locY) sesuai parameter constructor.
+   * Shark seharusnya terletak di (2,3) sesuai parameter Before.
    * </p>
-   * @param locX Koordinat x.
-   * @param locY Koordinat y.
    */
   @Test
-  public void matchPosition(int locX, int locY) {
-    assertEquals("X matches", (int) shark.getPosition().getX(), locX);
-    assertEquals("Y matches", (int) shark.getPosition().getY(), locY);
+  public void matchPosition() {
+    assertEquals("X does not match", (int) shark.getPosition().getX(), 2);
+    assertEquals("Y does not match", (int) shark.getPosition().getY(), 3);
   }
 
   /**
    * <p>
-   * Shark seharusnya memiliki weight sesuai dengan parameter dalam constructor.
+   * Shark seharusnya memiliki weight sesuai dengan parameter dalam Before.
    * </p>
-   * @param animalWeight Berat badan Animal.
    */
   @Test
-  public void matchWeight(int animalWeight) {
-    assertEquals("Weight matches", shark.getAnimalDiet().getWeight(), animalWeight);
+  public void matchWeight() {
+    assertEquals("Weight does not match", shark.getAnimalDiet().getWeight(), 80);
   }
 
   /**
@@ -73,7 +69,7 @@ public class SharkTest {
    */
   @Test
   public void matchBehavior() {
-    assertFalse("Behavior matches", shark.getAnimalBehavior().getBehavior());
+    assertFalse("Behavior does not match", shark.getAnimalBehavior().getBehavior());
   }
 
   /**
@@ -83,7 +79,7 @@ public class SharkTest {
    */
   @Test
   public void matchDiet() {
-    assertTrue("Diet matches", shark.getAnimalDiet().isCarnivore());
+    assertTrue("Diet does not match", shark.getAnimalDiet().isCarnivore());
   }
 
   /**
@@ -93,9 +89,9 @@ public class SharkTest {
    */
   @Test
   public void matchType() {
-    assertFalse("Land type matches", shark.getLandAnimal());
-    assertTrue("Water type matches", shark.getWaterAnimal());
-    assertFalse("Air type matches", shark.getAirAnimal());
+    assertFalse("Land type does not match", shark.getLandAnimal());
+    assertTrue("Water type does not match", shark.getWaterAnimal());
+    assertFalse("Air type does not match", shark.getAirAnimal());
   }
 
   /**
