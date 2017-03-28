@@ -11,14 +11,14 @@ import java.awt.Point;
  */
 public class Person implements Renderable {
 
-  private Point position = new Point(-1,-1);
+  private Point position;
 
   /**
    * Constructor
    * Menciptakan person default pada posisi (-1,-1).
    */
   public Person() {
-    resetPosition();
+    position = new Point(-1,-1);
   }
 
   /**
@@ -34,7 +34,7 @@ public class Person implements Renderable {
    * @param p Point yang sudah diciptakan.
    */
   public void setPosition(Point p) {
-    position = p;
+    position.setLocation(p.x,p.y);
   }
 
   /**
@@ -60,14 +60,14 @@ public class Person implements Renderable {
    * @param movement Nilai menentukan arah gerak animal.
    */
   public void move(int movement) {
-    if (movement == 1) {    // Up
-      position.setLocation(position.getX(), position.getY() - 1);
-    } else if (movement == 2) {    // Right
-      position.setLocation(position.getX() + 1, position.getY());
-    } else if (movement == 3) {    // Down
-      position.setLocation(position.getX(), position.getY() + 1);
-    } else if (movement == 4) {    // Left
-      position.setLocation(position.getX() - 1, position.getY());
+    if (movement == 0) {    // Up
+      position.move((int) position.getX(), (int) position.getY() - 1);
+    } else if (movement == 1) {    // Right
+      position.move((int) position.getX() + 1, (int) position.getY());
+    } else if (movement == 2) {    // Down
+      position.move((int) position.getX(), (int) position.getY() + 1);
+    } else {    // Left
+      position.move((int) position.getX() - 1, (int) position.getY());
     }
   }
 

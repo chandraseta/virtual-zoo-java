@@ -1,7 +1,6 @@
 package virtualzoo.zoo;
 
 import java.awt.Point;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
@@ -70,7 +69,7 @@ public class ZooTour {
 
       onExit = zoo.getExit().contains(visitor.getPosition());
       if (!onExit) {
-        moveVisitor(hasMovesLeft);
+        hasMovesLeft = moveVisitor();
         moveAnimals();
       }
     } while (!onExit && hasMovesLeft);
@@ -111,37 +110,34 @@ public class ZooTour {
     }
   }
 
-  private void moveVisitor(boolean hasMovesLeft) {
+  private boolean moveVisitor() {
     boolean movementInRange;
-    hasMovesLeft = true;
-    Point visitorLoc;
+    Point loc;
     int noOfTries = 0;
 
-    //int movement = ThreadLocalRandom.current().nextInt(0,4);
-    int movement = 0;
+    int movement = ThreadLocalRandom.current().nextInt(0,4);
     do {
-      System.out.print(hasMovesLeft);
-      System.out.print(String.format("%d %d", movement, noOfTries));
-      System.out.println(visitor.getPosition());
       visitor.move(movement);
-      visitorLoc = visitor.getPosition();
-      movementInRange = !visited[(int) visitorLoc.getY()][(int) visitorLoc.getX()] &&
-          visitorLoc.getX() >= 0 && visitorLoc.getX() < zoo.getLength() &&
-          visitorLoc.getY() >= 0 && visitorLoc.getY() < zoo.getWidth();
-
+      loc = visitor.getPosition();
+      movementInRange = (loc.y >= 0 && loc.y < zoo.getWidth() &&
+                        loc.x >= 0 && loc.x < zoo.getLength());
+      if (movementInRange) {
+        movementInRange = !visited[loc.y][loc.x];
+      }
       if (!movementInRange) {
         if (noOfTries < 4) {
-          noOfTries++;
           movement = (movement + 2) % 4;
           visitor.move(movement);
           movement = (movement + 3) % 4;
+          noOfTries++;
         } else {
-          hasMovesLeft = false;
+          return false;
         }
       } else {
-        visited[(int) visitorLoc.getY()][(int) visitorLoc.getX()] = true;
+        visited[loc.y][loc.x] = true;
       }
-    } while (!movementInRange && hasMovesLeft);
+    } while (!movementInRange);
+    return true;
   }
 
   private void moveAnimals() {
