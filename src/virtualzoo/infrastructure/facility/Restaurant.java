@@ -27,6 +27,16 @@ public class Restaurant extends Facility {
   }
 
   /**
+   * <p>
+   * Getter Restaurant name.
+   * </p>
+   * @return Nama Restaurant
+   */
+  public String getRestaurantName() {
+    return name;
+  }
+
+  /**
    * Mengembalikan suatu char yang menandakan Park dalam satu Cell.
    */
   public char render() {

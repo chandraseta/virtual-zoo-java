@@ -23,7 +23,7 @@ public abstract class Facility extends Cell {
    *
    * @param accessible Nilai true/false apakah dapat diakses.
    */
-  Facility(boolean accessible) {
+  public Facility(boolean accessible) {
     super(accessible);
   }
 }

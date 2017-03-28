@@ -27,6 +27,16 @@ public class Park extends Facility {
   }
 
   /**
+   * <p>
+   * Getter Park name.
+   * </p>
+   * @return Nama Park
+   */
+  public String getParkName() {
+    return name;
+  }
+
+  /**
    * Mengembalikan suatu char yang menandakan Park dalam satu Cell.
    */
   public char render() {
