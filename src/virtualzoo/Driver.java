@@ -16,8 +16,17 @@ import virtualzoo.zoo.ZooFood;
  * @since   3.0
  */
 public class Driver {
+
+  /**
+   * Zoo yang ada saat ini
+   */
   private Zoo zoo;
 
+  /**
+   * Constructor
+   * Antarmuka untuk masuk ke fitur-fitur yang ada di Virtual Zoo
+   * @throws IOException
+   */
   public Driver() throws IOException {
     zoo = new ZooReader("layout.in").getZoo();
 
@@ -45,7 +54,7 @@ public class Driver {
         case 2:
           new ZooTour(zoo); break;
         case 3:
-          new ZooFood(zoo).printTotalFood(); break;
+          new ZooFood(zoo).displayTotalFood(); break;
       }
     } while (n != 0);
   }

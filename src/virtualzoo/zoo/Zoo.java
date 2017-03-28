@@ -1,15 +1,13 @@
 package virtualzoo.zoo;
 
-import java.lang.Character;
-import java.lang.System;
-import java.util.HashSet;
-import virtualzoo.misc.Person;
 import java.awt.Point;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
 import virtualzoo.animal.Animal;
 import virtualzoo.infrastructure.Cell;
 import virtualzoo.infrastructure.facility.Road;
+import virtualzoo.misc.Person;
 
 /**
  * Kelas Zoo berisi elemen-elemen dari virtual zoo.
@@ -19,22 +17,50 @@ import virtualzoo.infrastructure.facility.Road;
  * @since   3.0
  */
 public class Zoo {
+  /**
+   * Konstanta panjang taman default
+   */
   public static final int DEF_LENGTH = 20;
-  public static final int DEF_WIDTH = 20;
-  private Cell map[][];
-  private char mapChar[][];
-  private int length;
-  private int width;
-  private Vector<Cage> cages;
-  private Set<Point> entrance;
-  private Set<Point> exit;
 
-  // Initializer block
-  {
-    cages = new Vector<Cage>();
-    entrance = new HashSet<Point>();
-    exit = new HashSet<Point>();
-  }
+  /**
+   * Konstanta lebar taman default
+   */
+  public static final int DEF_WIDTH = 20;
+
+  /**
+   * Matriks yang berisi setiap Cell yang membentuk Zoo
+   */
+  private Cell map[][];
+
+  /**
+   * Matriks char yang merepresentasikan Cell yang ada di Zoo
+   */
+  private char mapChar[][];
+
+  /**
+   * Panjang Zoo
+   */
+  private int length;
+
+  /**
+   * Lebar Zoo
+   */
+  private int width;
+
+  /**
+   * Berisi Cage yang ada di Zoo
+   */
+  private Vector<Cage> cages = new Vector<Cage>();
+
+  /**
+   * Berisi Point yang dapat menjadi pintu masuk Zoo
+   */
+  private Set<Point> entrance = new HashSet<Point>();
+
+  /**
+   * Berisi Point yang dapat menjadi pintu keluar Zoo
+   */
+  private Set<Point> exit = new HashSet<Point>();
 
   /**
    * Constructor

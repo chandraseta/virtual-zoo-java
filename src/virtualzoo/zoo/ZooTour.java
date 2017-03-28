@@ -16,12 +16,38 @@ import virtualzoo.misc.Person;
  * @since   3.0
  */
 public class ZooTour {
+
+  /**
+   * Zoo yang akan dijelajahi
+   */
   private Zoo zoo;
+
+  /**
+   * Point batas kiri atas Zoo
+   */
   private Point upperLeft;
+
+  /**
+   * Point batas kanan bawah Zoo
+   */
   private Point lowerRight;
+
+  /**
+   * Visitor yang akan menjelajahi Zoo
+   */
   private Person visitor;
+
+  /**
+   * Matriks yang menandakan apakah suatu petak
+   * sudah dikunjungi atau belum
+   */
   private boolean visited[][];
 
+  /**
+   * Konstruktor
+   * Memanggil mode Tour Zoo
+   * @param zoo Zoo yang akan dijelajahi
+   */
   public ZooTour(Zoo zoo) {
     this.zoo = zoo;
     visitor = new Person();
@@ -31,8 +57,13 @@ public class ZooTour {
     chooseEntrance();
 
     tourZoo();
+    visitor.resetPosition();
   }
 
+  /**
+   * Menginisialisasi matriks telah dikunjungi
+   * berdasarkan apakah suatu petak dapat dikunjungi
+   */
   private void initializeMatrixOfVisited() {
     visited = new boolean[zoo.getWidth()][zoo.getLength()];
     for (int i = 0; i < zoo.getWidth(); ++i) {
@@ -42,6 +73,9 @@ public class ZooTour {
     }
   }
 
+  /**
+   * Memilih tempat masuk Visitor secara acak dan
+   */
   private void chooseEntrance() {
     Set<Point> entrance = zoo.getEntrance();
     int entranceNo = ThreadLocalRandom.current().nextInt(0,entrance.size());
@@ -55,6 +89,10 @@ public class ZooTour {
     }
   }
 
+  /**
+   * Menjelajahi Zoo sampai menemui pintu keluar atau
+   * tidak dapat bergerak
+   */
   private void tourZoo() {
     boolean onExit;
     boolean hasMovesLeft = true;
@@ -79,9 +117,11 @@ public class ZooTour {
     } else {
       System.out.println("Visitor has nowhere to go");
     }
-    visitor.resetPosition();
   }
 
+  /**
+   * Menampilkan kondisi Zoo saat setelah pergerakan Visitor dan Animal
+   */
   private void printZoo() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
@@ -89,6 +129,9 @@ public class ZooTour {
     new ZooDisplay(zoo).printMap(upperLeft, lowerRight);
   }
 
+  /**
+   * Menampilkan interaksi Visitor dengan Animal
+   */
   private void interactWithAnimals() {
     Point visitorLoc = visitor.getPosition();
     for (Cage c: zoo.getCages()) {
@@ -110,6 +153,10 @@ public class ZooTour {
     }
   }
 
+  /**
+   * Menggerakan Visitor secara acak ke petak yang belum pernah dikunjungi
+   * @return Apakah Visitor masih dapat bergerak
+   */
   private boolean moveVisitor() {
     boolean movementInRange;
     Point loc;
@@ -140,6 +187,9 @@ public class ZooTour {
     return true;
   }
 
+  /**
+   * Menggerakan semua Animal di Cage secara acak
+   */
   private void moveAnimals() {
     for (Cage c: zoo.getCages()) {
       c.moveAnimal();

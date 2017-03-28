@@ -18,12 +18,39 @@ import virtualzoo.animal.behavior.BehaviorWild;
  */
 public class Cage {
 
+  /**
+   * Konstanta untuk mempermudah pernyataan tipe LAND pada Cage
+   */
   public static final int LAND = 0;
+
+  /**
+   * Konstanta untuk mempermudah pernyataan tipe WATER pada Cage
+   */
   public static final int WATER = 1;
+
+  /**
+   * Konstanta untuk mempermudah pernyataan tipe AIR pada Cage
+   */
   public static final int AIR = 2;
+
+  /**
+   * Atribut yang menandakan tipe Cage
+   */
   private int type;
+
+  /**
+   * Berisi kumpulan Point yang membentuk Cage ini
+   */
   private Set<Point> area;
+
+  /**
+   * Berisi Animal yang ada di Cage ini
+   */
   private Vector<Animal> animal;
+
+  /**
+   * Jumlah Animal yang ada di Cage ini
+   */
   private int nbAnimal;
 
   /**
@@ -134,7 +161,6 @@ public class Cage {
 
   /**
    * Getter area cage.
-   *
    * @return Set of point yang menyatakan area cage.
    */
   public Set<Point> getArea() {
@@ -143,7 +169,6 @@ public class Cage {
 
   /**
    * Getter daftar animal.
-   *
    * @return Vector of pointer to Animal yang berisi hewan.
    */
   public Vector<Animal> getAnimal() {

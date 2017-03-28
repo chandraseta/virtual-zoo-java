@@ -12,12 +12,25 @@ import virtualzoo.misc.Person;
  * @since   3.0
  */
 public class ZooDisplay {
+
+  /**
+   * Zoo yang akan ditampilkan
+   */
   private Zoo zoo;
 
+  /**
+   * Konstruktor
+   * @param zoo Zoo yang akan ditampilkan
+   */
   public ZooDisplay(Zoo zoo) {
     this.zoo = zoo;
   }
 
+  /**
+   * Interface untuk menampilkan Zoo di layar
+   * Meminta batas titik kiri atas dan kanan bawah
+   * Mencetak Zoo yang berada di antara batas tersebut
+   */
   public void displayZoo() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
