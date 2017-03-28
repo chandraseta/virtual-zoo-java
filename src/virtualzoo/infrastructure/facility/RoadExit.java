@@ -1,7 +1,5 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.infrastructure.facility.Road;
-
 /**
  * Kelas RoadExit mendefinisikan sebuah jalan keluar di dalam Zoo.
  *
@@ -16,8 +14,8 @@ public class RoadExit extends Road {
    *
    * Kelas RoadExit mendefinisikan atribut untuk jalan keluar.
    */
-  RoadExit(boolean accessible, String _name) {
-    super(accessible, _name);
+  RoadExit(boolean accessible) {
+    super(accessible);
     is_exit = true;
   }
 }

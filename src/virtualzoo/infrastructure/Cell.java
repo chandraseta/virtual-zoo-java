@@ -1,5 +1,7 @@
 package virtualzoo.infrastructure;
 
+import virtualzoo.misc.Renderable;
+
 /**
  * Kelas Cell yang mendefinisikan aksesibilitas suatu cell.
  *
@@ -7,7 +9,7 @@ package virtualzoo.infrastructure;
  * @version 3.0
  * @since 3.0
  */
-public abstract class Cell {
+public abstract class Cell implements Renderable {
 
   /**
    * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung

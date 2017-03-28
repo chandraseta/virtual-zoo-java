@@ -1,7 +1,5 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.infrastructure.facility.Road;
-
 /**
  * Kelas RoadEntrance mendefinisikan sebuah jalan masuk di dalam Zoo.
  *
@@ -16,8 +14,8 @@ public class RoadEntrance extends Road {
    *
    * Kelas RoadEntrance mendefinisikan atribut untuk jalan masuk.
    */
-  RoadEntrance(boolean accessible, String _name) {
-    super(accessible, _name);
+  RoadEntrance(boolean accessible) {
+    super(accessible);
     is_entrance = true;
   }
 

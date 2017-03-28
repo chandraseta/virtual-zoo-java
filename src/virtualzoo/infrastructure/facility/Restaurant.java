@@ -1,7 +1,5 @@
 package virtualzoo.infrastructure.facility;
 
-import virtualzoo.misc.*;
-
 /**
  * Kelas Restaurant mendefinisikan sebuah tempat makan di dalam Zoo.
  *
@@ -9,7 +7,7 @@ import virtualzoo.misc.*;
  * @version 3.0
  * @since 3.0
  */
-public class Restaurant extends Facility implements Renderable {
+public class Restaurant extends Facility {
 
   /**
    * Nama untuk setiap Restaurant.
