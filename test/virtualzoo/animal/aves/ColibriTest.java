@@ -1,11 +1,10 @@
-package test.animal;
+package virtualzoo.animal.aves;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import virtualzoo.animal.aves.Colibri;
 
 /**
  * <p>
@@ -45,10 +44,10 @@ public class ColibriTest {
 
   /**
    * <p>
-   * Colibri seharusnya terletak di (_x,_y) sesuai parameter constructor.
+   * Colibri seharusnya terletak di (locX,locY) sesuai parameter constructor.
    * </p>
-   * @param locX
-   * @param locY
+   * @param locX Koordinat x.
+   * @param locY Koordinat y.
    */
   @Test
   public void matchPosition(int locX, int locY) {
@@ -60,7 +59,7 @@ public class ColibriTest {
    * <p>
    * Colibri seharusnya memiliki weight sesuai dengan parameter dalam constructor.
    * </p>
-   * @param animalWeight
+   * @param animalWeight Berat badan Animal.
    */
   @Test
   public void matchWeight(int animalWeight) {
