@@ -1,0 +1,334 @@
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: virtualzoo
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 8
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    virtualzoo.Zoo
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    java.util
+    virtualzoo.animal
+    virtualzoo.infrastructure
+    virtualzoo.infrastructure.facility
+    virtualzoo.misc
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: virtualzoo.animal
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 5
+
+    A: 1
+    I: 0.56
+    D: 0.56
+
+Abstract Classes:
+    virtualzoo.animal.Animal
+
+Concrete Classes:
+
+Depends Upon:
+    java.awt
+    java.lang
+    virtualzoo.animal.behavior
+    virtualzoo.animal.diet
+    virtualzoo.misc
+
+Used By:
+    virtualzoo
+    virtualzoo.animal.mammalia
+    virtualzoo.animal.pisces
+    virtualzoo.infrastructure
+
+--------------------------------------------------
+- Package: virtualzoo.animal.behavior
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 2
+
+    A: 1
+    I: 0.33
+    D: 0.33
+
+Abstract Classes:
+    virtualzoo.animal.behavior.AnimalBehavior
+
+Concrete Classes:
+
+Depends Upon:
+    java.lang
+    java.util
+
+Used By:
+    virtualzoo.animal
+    virtualzoo.animal.mammalia
+    virtualzoo.animal.pisces
+    virtualzoo.infrastructure
+
+--------------------------------------------------
+- Package: virtualzoo.animal.diet
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 1
+
+    A: 1
+    I: 0.25
+    D: 0.25
+
+Abstract Classes:
+    virtualzoo.animal.diet.AnimalDiet
+
+Concrete Classes:
+
+Depends Upon:
+    java.lang
+
+Used By:
+    virtualzoo.animal
+    virtualzoo.animal.mammalia
+    virtualzoo.animal.pisces
+
+--------------------------------------------------
+- Package: virtualzoo.animal.mammalia
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 0
+    Ce: 6
+
+    A: 0.33
+    I: 1
+    D: 0.33
+
+Abstract Classes:
+    virtualzoo.animal.mammalia.Mammalia
+
+Concrete Classes:
+    virtualzoo.animal.mammalia.Elephant
+    virtualzoo.animal.mammalia.Lion
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    virtualzoo.animal
+    virtualzoo.animal.behavior
+    virtualzoo.animal.diet
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: virtualzoo.animal.pisces
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 0
+    Ce: 6
+
+    A: 0.5
+    I: 1
+    D: 0.5
+
+Abstract Classes:
+    virtualzoo.animal.pisces.Pisces
+
+Concrete Classes:
+    virtualzoo.animal.pisces.Barracuda
+
+Depends Upon:
+    java.awt
+    java.io
+    java.lang
+    virtualzoo.animal
+    virtualzoo.animal.behavior
+    virtualzoo.animal.diet
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: virtualzoo.infrastructure
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 6
+
+    A: 0.5
+    I: 0.75
+    D: 0.25
+
+Abstract Classes:
+    virtualzoo.infrastructure.Cell
+
+Concrete Classes:
+    virtualzoo.infrastructure.Cage
+
+Depends Upon:
+    java.awt
+    java.lang
+    java.util
+    virtualzoo.animal
+    virtualzoo.animal.behavior
+    virtualzoo.misc
+
+Used By:
+    virtualzoo
+    virtualzoo.infrastructure.facility
+
+--------------------------------------------------
+- Package: virtualzoo.infrastructure.facility
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 0
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 2
+
+    A: 1
+    I: 0.67
+    D: 0.67
+
+Abstract Classes:
+    virtualzoo.infrastructure.facility.Facility
+
+Concrete Classes:
+
+Depends Upon:
+    java.lang
+    virtualzoo.infrastructure
+
+Used By:
+    virtualzoo
+
+--------------------------------------------------
+- Package: virtualzoo.misc
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 2
+
+    A: 0.5
+    I: 0.4
+    D: 0.1
+
+Abstract Classes:
+    virtualzoo.misc.Renderable
+
+Concrete Classes:
+    virtualzoo.misc.Person
+
+Depends Upon:
+    java.awt
+    java.lang
+
+Used By:
+    virtualzoo
+    virtualzoo.animal
+    virtualzoo.infrastructure
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+java.awt,0,0,6,0,0,0,1,1
+java.io,0,0,3,0,0,0,1,1
+java.lang,0,0,9,0,0,0,1,1
+java.util,0,0,3,0,0,0,1,1
+virtualzoo,1,0,0,8,0,1,0,1
+virtualzoo.animal,1,1,4,5,1,0.56,0.56,1
+virtualzoo.animal.behavior,1,1,4,2,1,0.33,0.33,1
+virtualzoo.animal.diet,1,1,3,1,1,0.25,0.25,1
+virtualzoo.animal.mammalia,3,1,0,6,0.33,1,0.33,1
+virtualzoo.animal.pisces,2,1,0,6,0.5,1,0.5,1
+virtualzoo.infrastructure,2,1,2,6,0.5,0.75,0.25,1
+virtualzoo.infrastructure.facility,1,1,1,2,1,0.67,0.67,1
+virtualzoo.misc,2,1,3,2,0.5,0.4,0.1,1
