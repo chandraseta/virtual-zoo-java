@@ -1,9 +1,7 @@
 package virtualzoo.zoo;
 
 import java.awt.Point;
-import java.util.Random;
-import java.util.Set;
-import java.util.Vector;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
 import java.util.concurrent.ThreadLocalRandom;
@@ -35,6 +33,8 @@ public class Cage {
   public Cage() {
     type = LAND;
     nbAnimal = 0;
+    area = new HashSet<Point>();
+    animal = new Vector<Animal>();
   }
 
   /**
@@ -46,6 +46,8 @@ public class Cage {
   public Cage(int habitatType) {
     type = habitatType;
     nbAnimal = 0;
+    area = new HashSet<Point>();
+    animal = new Vector<Animal>();
   }
 
   /**
@@ -75,9 +77,8 @@ public class Cage {
   public void addAnimal(Animal a) {
     if (nbAnimal < area.size() / 10 * 3) {
       AnimalBehavior behavior = a.getAnimalBehavior();
-      behavior.setBehavior();
 
-      if (behavior.getBehavior()) {
+      if (!behavior.getBehavior()) {
         animal.add(a);
         nbAnimal++;
       } else {

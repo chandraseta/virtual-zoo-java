@@ -42,7 +42,7 @@ public abstract class Animal implements Renderable {
   /**
    * Sebuah point yang menyatakan lokasi dari Animal.
    */
-  protected Point position;
+  protected Point position = new Point(-1,-1);
   /**
    * Atribut yang menentukan kelakuan Animal.
    */

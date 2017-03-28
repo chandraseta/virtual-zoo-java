@@ -42,20 +42,17 @@ public class ZooReader {
     DataInputStream in;
     BufferedReader br;
 
-    try {
-      fstream = new FileInputStream(filename);
-      in = new DataInputStream(fstream);
-      br = new BufferedReader(new InputStreamReader(in));
+    fstream = new FileInputStream(String.format("%s", filename));
+    in = new DataInputStream(fstream);
+    br = new BufferedReader(new InputStreamReader(in));
 
-      readMap(br);
-      readCages(br);
 
-      br.close();
-      in.close();
-      fstream.close();
-    } catch (Exception e) {
-      System.err.println("Error: " + e.getMessage());
-    }
+    readMap(br);
+    readCages(br);
+
+    br.close();
+    in.close();
+    fstream.close();
   }
 
   /**
@@ -132,60 +129,58 @@ public class ZooReader {
         int x = Integer.parseInt(strSplit[2]);
         int w = Integer.parseInt(strSplit[3]);
 
-        Animal a = null;
         if (species.equals("Wolf")) {
-          a = new Wolf(x,y,w);
+          c.addAnimal(new Wolf(x,y,w));
         } else if (species.equals("Lion")) {
-          a = new Lion(x,y,w);
+          c.addAnimal(new Lion(x,y,w));
         } else if (species.equals("Tiger")) {
-          a = new Tiger(x,y,w);
+          c.addAnimal(new Tiger(x,y,w));
         } else if (species.equals("Zebra")) {
-          a = new Zebra(x,y,w);
+          c.addAnimal(new Zebra(x,y,w));
         } else if (species.equals("Monkey")) {
-          a = new Monkey(x,y,w);
+          c.addAnimal(new Monkey(x,y,w));
         } else if (species.equals("Giraffe")) {
-          a = new Giraffe(x,y,w);
+          c.addAnimal(new Giraffe(x,y,w));
         } else if (species.equals("Elephant")) {
-          a = new Elephant(x,y,w);
+          c.addAnimal(new Elephant(x,y,w));
         } else if (species.equals("Crocodile")) {
-          a = new Crocodile(x,y,w);
+          c.addAnimal(new Crocodile(x,y,w));
         } else if (species.equals("Python")) {
-          a = new Python(x,y,w);
+          c.addAnimal(new Python(x,y,w));
         } else if (species.equals("Komodo")) {
-          a = new Komodo(x,y,w);
+          c.addAnimal(new Komodo(x,y,w));
         } else if (species.equals("Iguana")) {
-          a = new Iguana(x,y,w);
+          c.addAnimal(new Iguana(x,y,w));
         } else if (species.equals("Chameleon")) {
-          a = new Chameleon(x,y,w);
+          c.addAnimal(new Chameleon(x,y,w));
         } else if (species.equals("Shark")) {
-          a = new Shark(x,y,w);
+          c.addAnimal(new Shark(x,y,w));
         } else if (species.equals("Clownfish")) {
-          a = new Clownfish(x,y,w);
+          c.addAnimal(new Clownfish(x,y,w));
         } else if (species.equals("Barracuda")) {
-          a = new Barracuda(x,y,w);
+          c.addAnimal(new Barracuda(x,y,w));
         } else if (species.equals("Owl")) {
-          a = new Owl(x,y,w);
+          c.addAnimal(new Owl(x,y,w));
         } else if (species.equals("Eagle")) {
-          a = new Eagle(x,y,w);
+          c.addAnimal(new Eagle(x,y,w));
         } else if (species.equals("Colibri")) {
-          a = new Colibri(x,y,w);
+          c.addAnimal(new Colibri(x,y,w));
         } else if (species.equals("Peacock")) {
-          a = new Peacock(x,y,w);
+          c.addAnimal(new Peacock(x,y,w));
         } else if (species.equals("Duck")) {
-          a = new Duck(x,y,w);
+          c.addAnimal(new Duck(x,y,w));
         } else if (species.equals("WildColibri")) {
           wildAnimals.add(new WildColibri(x,y,w));
         } else {
           wildAnimals.add(new WildBunny(x,y,w));
         }
-
-        if (a != null)
-          c.addAnimal(a);
         strLine = br.readLine();
       }
 
       while (!wildAnimals.isEmpty())
         c.addAnimal(wildAnimals.remove());
+
+      zoo.addCage(c);
     }
   }
 }

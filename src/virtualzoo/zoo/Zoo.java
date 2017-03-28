@@ -2,6 +2,7 @@ package virtualzoo.zoo;
 
 import java.lang.Character;
 import java.lang.System;
+import java.util.HashSet;
 import virtualzoo.misc.Person;
 import java.awt.Point;
 import java.util.Set;
@@ -18,17 +19,22 @@ import virtualzoo.infrastructure.facility.Road;
  * @since   3.0
  */
 public class Zoo {
-  private static final int LENGTH = 20;
-  private static final int WIDTH = 20;
-  private Cell map[][];
-  private char mapChar[][];
   public static final int DEF_LENGTH = 20;
   public static final int DEF_WIDTH = 20;
+  private Cell map[][];
+  private char mapChar[][];
   private int length;
   private int width;
   private Vector<Cage> cages;
   private Set<Point> entrance;
   private Set<Point> exit;
+
+  // Initializer block
+  {
+    cages = new Vector<Cage>();
+    entrance = new HashSet<Point>();
+    exit = new HashSet<Point>();
+  }
 
   /**
    * Constructor
@@ -110,6 +116,11 @@ public class Zoo {
   }
 
   /**
+   * @return Matriks char dari map zoo
+   */
+  public char[][] getMapChar() { return mapChar; }
+
+  /**
    * @return Set berisi point lokasi entrance zoo.
    */
   public Set<Point> getEntrance() {
@@ -158,8 +169,8 @@ public class Zoo {
    * @param visitor Person yang merupakan pengunjung zoo.
    */
   public void renderMap(Person visitor) {
-    for (int i = 0; i < DEF_WIDTH; ++i) {
-      for (int j = 0; j < DEF_LENGTH; ++j) {
+    for (int i = 0; i < width; ++i) {
+      for (int j = 0; j < length; ++j) {
         mapChar[i][j] = map[i][j].render();
       }
     }
@@ -174,23 +185,9 @@ public class Zoo {
       }
     }
     Point p = visitor.getPosition();
-    if (p.getX() >= 0 && p.getX() < DEF_LENGTH &&
-        p.getY() >= 0 && p.getY() < DEF_WIDTH) {
+    if (p.getX() >= 0 && p.getX() < length &&
+        p.getY() >= 0 && p.getY() < width) {
       mapChar[(int) p.getY()][(int) p.getX()] = visitor.render();
-    }
-  }
-
-  /**
-   * Menampilkan hasil render zoo ke layar.
-   * @param upperRight Point batas kiri atas
-   * @param lowerLeft Point batas kanan bawah
-   */
-  public void printMap(Point upperRight, Point lowerLeft) {
-    for (int i = (int) upperRight.getY(); i <= (int) lowerLeft.getY(); ++i) {
-      for (int j = (int) upperRight.getX(); j <= (int) lowerLeft.getX(); ++j) {
-        System.out.print(mapChar[i][j]);
-      }
-      System.out.println();
     }
   }
 

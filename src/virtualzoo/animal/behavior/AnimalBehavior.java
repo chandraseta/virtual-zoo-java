@@ -33,11 +33,6 @@ public abstract class AnimalBehavior {
   }
 
   /**
-   * Menetapkan perilaku Animal.
-   */
-  public abstract void setBehavior();
-
-  /**
    * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *

@@ -11,7 +11,7 @@ import java.awt.Point;
  */
 public class Person implements Renderable {
 
-  private Point position;
+  private Point position = new Point(-1,-1);
 
   /**
    * Constructor

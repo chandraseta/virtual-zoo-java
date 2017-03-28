@@ -1,6 +1,8 @@
 package virtualzoo.animal.behavior;
 
 
+import java.util.HashSet;
+
 /**
  * Kelas BehaviorWild mendefinisikan perilaku hewan liar.
  *
@@ -11,10 +13,12 @@ package virtualzoo.animal.behavior;
 public class BehaviorWild extends AnimalBehavior {
 
   /**
-   * Menetapkan perilaku Animal menjadi liar.
+   * Constructor
    */
-  public void setBehavior() {
+  public BehaviorWild() {
+    super();
     isWild = true;
+    enemy = new HashSet<Integer>();
   }
 
   /**

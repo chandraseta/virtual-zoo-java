@@ -10,9 +10,10 @@ package virtualzoo.animal.behavior;
 public class BehaviorTame extends AnimalBehavior {
 
   /**
-   * Menetapkan perilaku Animal menjadi jinak.
+   * Constructor
    */
-  public void setBehavior() {
+  public BehaviorTame() {
+    super();
     isWild = false;
   }
 

@@ -18,8 +18,8 @@ import virtualzoo.misc.Person;
  */
 public class ZooTour {
   private Zoo zoo;
-  private Point upperRight;
-  private Point lowerLeft;
+  private Point upperLeft;
+  private Point lowerRight;
   private Person visitor;
   private boolean visited[][];
 
@@ -58,33 +58,39 @@ public class ZooTour {
 
   private void tourZoo() {
     boolean onExit;
-    boolean noMoreMoves = false;
-    upperRight = new Point(0,0);
-    lowerLeft = new Point(zoo.getLength()-1, zoo.getWidth()-1);
+    boolean hasMovesLeft = true;
+    upperLeft = new Point(0,0);
+    lowerRight = new Point(zoo.getLength()-1, zoo.getWidth()-1);
     do {
       printZoo();
       interactWithAnimals();
 
-      System.out.println("Press enter to continue");
+      System.out.println("\nPress enter to continue");
       new Scanner(System.in).nextLine();
 
       onExit = zoo.getExit().contains(visitor.getPosition());
       if (!onExit) {
-        noMoreMoves = !moveVisitor();
+        moveVisitor(hasMovesLeft);
         moveAnimals();
       }
-    } while (!onExit && !noMoreMoves);
+    } while (!onExit && hasMovesLeft);
+
+    if (onExit) {
+      System.out.println("Visitor exited successfully");
+    } else {
+      System.out.println("Visitor has nowhere to go");
+    }
+    visitor.resetPosition();
   }
 
   private void printZoo() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
     zoo.renderMap(visitor);
-    zoo.printMap(upperRight,lowerLeft);
+    new ZooDisplay(zoo).printMap(upperLeft, lowerRight);
   }
 
   private void interactWithAnimals() {
-    // Interact
     Point visitorLoc = visitor.getPosition();
     for (Cage c: zoo.getCages()) {
       Point up = new Point((int) visitorLoc.getX(), (int) visitorLoc.getY() - 1);
@@ -105,13 +111,18 @@ public class ZooTour {
     }
   }
 
-  private boolean moveVisitor() {
+  private void moveVisitor(boolean hasMovesLeft) {
     boolean movementInRange;
+    hasMovesLeft = true;
     Point visitorLoc;
     int noOfTries = 0;
 
-    int movement = ThreadLocalRandom.current().nextInt(0,4);
+    //int movement = ThreadLocalRandom.current().nextInt(0,4);
+    int movement = 0;
     do {
+      System.out.print(hasMovesLeft);
+      System.out.print(String.format("%d %d", movement, noOfTries));
+      System.out.println(visitor.getPosition());
       visitor.move(movement);
       visitorLoc = visitor.getPosition();
       movementInRange = !visited[(int) visitorLoc.getY()][(int) visitorLoc.getX()] &&
@@ -120,18 +131,17 @@ public class ZooTour {
 
       if (!movementInRange) {
         if (noOfTries < 4) {
+          noOfTries++;
           movement = (movement + 2) % 4;
           visitor.move(movement);
           movement = (movement + 3) % 4;
-          noOfTries++;
         } else {
-          return false;
+          hasMovesLeft = false;
         }
       } else {
         visited[(int) visitorLoc.getY()][(int) visitorLoc.getX()] = true;
       }
-    } while (!movementInRange);
-    return true;
+    } while (!movementInRange && hasMovesLeft);
   }
 
   private void moveAnimals() {
