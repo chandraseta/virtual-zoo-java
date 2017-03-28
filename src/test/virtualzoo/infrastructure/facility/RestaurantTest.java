@@ -1,10 +1,10 @@
-package virtualzoo.infrastructure.facility;
+package test.virtualzoo.infrastructure.facility;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-
+import virtualzoo.infrastructure.facility.Restaurant;
 
 /**
  * <p>

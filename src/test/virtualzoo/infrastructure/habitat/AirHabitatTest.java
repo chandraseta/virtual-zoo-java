@@ -1,4 +1,4 @@
-package virtualzoo.infrastructure.habitat;
+package test.virtualzoo.infrastructure.habitat;
 
 import static org.junit.Assert.assertEquals;
 

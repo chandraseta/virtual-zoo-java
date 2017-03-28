@@ -1,10 +1,11 @@
-package virtualzoo.infrastructure.facility;
+package test.virtualzoo.infrastructure.facility;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
+import virtualzoo.infrastructure.facility.RoadEntrance;
 
 /**
  * <p>
