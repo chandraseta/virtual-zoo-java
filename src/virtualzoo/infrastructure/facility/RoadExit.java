@@ -15,7 +15,7 @@ public class RoadExit extends Road {
    * Kelas RoadExit mendefinisikan atribut untuk jalan keluar.
    * </p>
    */
-  RoadExit(boolean accessible) {
+  public RoadExit(boolean accessible) {
     super(accessible);
     roadExit = true;
   }

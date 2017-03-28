@@ -1,9 +1,12 @@
-package virtualzoo.infrastructure;
+package virtualzoo.zoo;
 
 import java.awt.Point;
 import java.util.Random;
 import java.util.Set;
 import java.util.Vector;
+import java.util.Set;
+import java.util.Vector;
+import java.util.concurrent.ThreadLocalRandom;
 import virtualzoo.animal.Animal;
 import virtualzoo.animal.behavior.AnimalBehavior;
 import virtualzoo.animal.behavior.BehaviorWild;
@@ -111,12 +114,10 @@ public class Cage {
    * Akan dicek agar animal tidak keluar dari cage.
    */
   public void moveAnimal() {
-    Random randomNumber = new Random();
-
     for (int i = 0; i < animal.size(); ++i) {
-      int movement = randomNumber.nextInt(4);
+      int movement = ThreadLocalRandom.current().nextInt(0,4);
       boolean movementInCage;
-      int numberOfTries = 0;
+      int noOfTries = 0;
       do {
         animal.elementAt(i).move(movement);
         movementInCage = area.contains(animal.elementAt(i).getPosition());
@@ -124,9 +125,9 @@ public class Cage {
           movement = (movement + 2) % 4;
           animal.elementAt(i).move(movement);
           movement = (movement + 3) % 4;
-          numberOfTries++;
+          noOfTries++;
         }
-      } while (!movementInCage && numberOfTries < 4);
+      } while (!movementInCage && noOfTries < 4);
     }
   }
 

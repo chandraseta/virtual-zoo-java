@@ -1,15 +1,14 @@
-package virtualzoo;
+package virtualzoo.zoo;
 
-import java.awt.Point;
 import java.lang.Character;
 import java.lang.System;
+import virtualzoo.misc.Person;
+import java.awt.Point;
 import java.util.Set;
 import java.util.Vector;
 import virtualzoo.animal.Animal;
-import virtualzoo.infrastructure.Cage;
 import virtualzoo.infrastructure.Cell;
 import virtualzoo.infrastructure.facility.Road;
-import virtualzoo.misc.Person;
 
 /**
  * Kelas Zoo berisi elemen-elemen dari virtual zoo.
@@ -21,21 +20,27 @@ import virtualzoo.misc.Person;
 public class Zoo {
   private static final int LENGTH = 20;
   private static final int WIDTH = 20;
-  private Cell [][] map;
-  private char [][] mapChar;
+  private Cell map[][];
+  private char mapChar[][];
+  public static final int DEF_LENGTH = 20;
+  public static final int DEF_WIDTH = 20;
+  private int length;
+  private int width;
   private Vector<Cage> cages;
   private Set<Point> entrance;
   private Set<Point> exit;
 
   /**
    * Constructor
-   * Mengalokasikan Zoo kosong dengan ukuran WIDTH x LENGTH.
+   * Mengalokasikan Zoo kosong dengan ukuran DEF_WIDTH x DEF_LENGTH.
    */
   public Zoo()  {
-    map = new Cell[WIDTH][LENGTH];
-    mapChar = new char[WIDTH][LENGTH];
-    for (int i = 0; i < WIDTH; ++i) {
-      for (int j = 0; j < LENGTH; ++j) {
+    this.length = DEF_LENGTH;
+    this.width = DEF_WIDTH;
+    map = new Cell[DEF_WIDTH][DEF_LENGTH];
+    mapChar = new char[DEF_WIDTH][DEF_LENGTH];
+    for (int i = 0; i < DEF_WIDTH; ++i) {
+      for (int j = 0; j < DEF_LENGTH; ++j) {
         map[i][j] = null;
         mapChar[i][j] = ' ';
       }
@@ -43,13 +48,38 @@ public class Zoo {
   }
 
   /**
-   * Menetapkan jenis cell pada titik (i,j).
-   * @param c Suatu cell yang telah diciptakan.
-   * @param i Indeks matriks (absis).
-   * @param j Indeks matriks (ordinat).
+   * Constructor
+   * Mengalokasikan Zoo kosong dengan ukuran width x length
+   * @param length Panjang zoo
+   * @param width Lebar zoo
    */
-  public void setTile(Cell c, int i, int j) {
-    map[i][j] = c;
+  public Zoo(int length, int width) {
+    this.length = length;
+    this.width = width;
+    map = new Cell[width][length];
+    mapChar = new char[width][length];
+    for (int i = 0; i < width; ++i) {
+      for (int j = 0; j < length; ++j) {
+        map[i][j] = null;
+        mapChar[i][j] = ' ';
+      }
+    }
+  }
+
+  /**
+   * Getter panjang dari zoo
+   * @return zoo.length
+   */
+  public int getLength() {
+    return length;
+  }
+
+  /**
+   * Getter lebar dari zoo
+   * @return zoo.width
+   */
+  public int getWidth() {
+    return width;
   }
 
   /**
@@ -60,6 +90,16 @@ public class Zoo {
    */
   public Cell getTile(int i, int j) {
     return map[i][j];
+  }
+
+  /**
+   * Menetapkan jenis cell pada titik (i,j).
+   * @param c Suatu cell yang telah diciptakan.
+   * @param i Indeks matriks (absis).
+   * @param j Indeks matriks (ordinat).
+   */
+  public void setTile(Cell c, int i, int j) {
+    map[i][j] = c;
   }
 
   /**
@@ -118,8 +158,8 @@ public class Zoo {
    * @param visitor Person yang merupakan pengunjung zoo.
    */
   public void renderMap(Person visitor) {
-    for (int i = 0; i < WIDTH; ++i) {
-      for (int j = 0; j < LENGTH; ++j) {
+    for (int i = 0; i < DEF_WIDTH; ++i) {
+      for (int j = 0; j < DEF_LENGTH; ++j) {
         mapChar[i][j] = map[i][j].render();
       }
     }
@@ -134,22 +174,20 @@ public class Zoo {
       }
     }
     Point p = visitor.getPosition();
-    if (p.getX() >= 0 && p.getX() < LENGTH
-        && p.getY() >= 0 && p.getY() < WIDTH) {
+    if (p.getX() >= 0 && p.getX() < DEF_LENGTH &&
+        p.getY() >= 0 && p.getY() < DEF_WIDTH) {
       mapChar[(int) p.getY()][(int) p.getX()] = visitor.render();
     }
   }
 
   /**
    * Menampilkan hasil render zoo ke layar.
-   * @param ux Nilai absis koordinat pojok kiri atas.
-   * @param uy Nilai ordinat koordinat pojok kiri atas.
-   * @param lx Nilai absis koordinat pojok kanan bawah.
-   * @param ly NIlai ordinat koordinat pojok kanan bawah.
+   * @param upperRight Point batas kiri atas
+   * @param lowerLeft Point batas kanan bawah
    */
-  public void printMap(int ux, int uy, int lx, int ly) {
-    for (int i = uy; i <= ly; ++i) {
-      for (int j = ux; j <= lx; ++j) {
+  public void printMap(Point upperRight, Point lowerLeft) {
+    for (int i = (int) upperRight.getY(); i <= (int) lowerLeft.getY(); ++i) {
+      for (int j = (int) upperRight.getX(); j <= (int) lowerLeft.getX(); ++j) {
         System.out.print(mapChar[i][j]);
       }
       System.out.println();
@@ -160,8 +198,8 @@ public class Zoo {
    * Mencari semua entrance dan exit dari zoo dan menyimpannya.
    */
   public void listAllEntranceExit() {
-    for (int i = 0; i < WIDTH; ++i) {
-      for (int j = 0; j < LENGTH; ++j) {
+    for (int i = 0; i < DEF_WIDTH; ++i) {
+      for (int j = 0; j < DEF_LENGTH; ++j) {
         if (map[i][j] instanceof Road) {
           Road r = (Road) map[i][j];
           if (r.isEntrance()) {

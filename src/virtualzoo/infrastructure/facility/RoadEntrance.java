@@ -9,13 +9,13 @@ package virtualzoo.infrastructure.facility;
  */
 public class RoadEntrance extends Road {
 
-  /** <p>
+  /**
    * Constructor
    *
    * Kelas RoadEntrance mendefinisikan atribut untuk jalan masuk.
-   * </p>
+   *
    */
-  RoadEntrance(boolean accessible) {
+  public RoadEntrance(boolean accessible) {
     super(accessible);
     roadEntrance = true;
   }
