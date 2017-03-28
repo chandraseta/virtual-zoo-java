@@ -1,6 +1,5 @@
 package virtualzoo.animal.aves;
 
-import virtualzoo.animal.Animal;
 import virtualzoo.animal.behavior.BehaviorWild;
 import virtualzoo.animal.diet.Herbivora;
 
@@ -16,25 +15,25 @@ public class WildColibri extends Aves {
   /**
    * Constructor
    *
-   * Menciptakan wild colibri dengan posisi (_x, _y) dan berat _weight.
+   * Menciptakan wild colibri dengan posisi (locX, locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat wild colibri.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat wild colibri.
    */
-  public WildColibri(int _x, int _y, int _weight) {
+  public WildColibri(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorWild();
-    animal_diet = new Herbivora(_weight, 60);
+    animalBehavior = new BehaviorWild();
+    animalDiet = new Herbivora(animalWeight, 60);
     ID = 21;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = true;
-    animal_behavior.addEnemy(2);
-    animal_behavior.addEnemy(3);
-    animal_behavior.addEnemy(9);
-    animal_behavior.addEnemy(19);
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = true;
+    animalBehavior.addEnemy(2);
+    animalBehavior.addEnemy(3);
+    animalBehavior.addEnemy(9);
+    animalBehavior.addEnemy(19);
   }
 
   /**

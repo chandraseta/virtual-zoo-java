@@ -19,10 +19,10 @@ public class Restaurant extends Facility {
    *
    * Membuat sebuah restaurant.
    */
-  public Restaurant(boolean accessible, String _name) {
+  public Restaurant(boolean accessible, String facilityName) {
     super(accessible);
-    facility_type = "Restaurant";
-    name = _name;
+    facilityType = "Restaurant";
+    name = facilityName;
   }
 
   /**

@@ -15,15 +15,15 @@ public class Omnivora extends AnimalDiet {
    * Menciptakan Omnivora (Animal pemakan daging dan tumbuhan).
    *
    * @param _weight Nilai berat Animal (jalam kilogram).
-   * @param _ratio_meat Rasio (%) jumlah daging yang dibutuhkan terhadap berat Animal.
-   * @param _ratio_plant Rasio (%) jumlah tumbuhan yang dibutuhkan terhadap berat Animal.
+   * @param _ratioMeat Rasio (%) jumlah daging yang dibutuhkan terhadap berat Animal.
+   * @param _ratioPlant Rasio (%) jumlah tumbuhan yang dibutuhkan terhadap berat Animal.
    */
-  public Omnivora(int _weight, int _ratio_meat, int _ratio_plant) {
+  public Omnivora(int _weight, int _ratioMeat, int _ratioPlant) {
     weight = _weight;
-    ratio_meat = _ratio_meat;
-    ratio_plant = _ratio_plant;
-    eat_meat = true;
-    eat_plant = true;
+    ratioMeat = _ratioMeat;
+    ratioPlant = _ratioPlant;
+    eatMeat = true;
+    eatPlant = true;
   }
 
   /**
@@ -32,7 +32,7 @@ public class Omnivora extends AnimalDiet {
    * @return Jumlah daging yang dibutuhkan untuk Animal tertentu
    */
   public int getReqMeat() {
-    return (ratio_meat * weight / 100);
+    return (ratioMeat * weight / 100);
   }
 
   /**
@@ -41,6 +41,6 @@ public class Omnivora extends AnimalDiet {
    * @return Jumlah tumbuhan yang dibutuhkan untuk Animal tertentu
    */
   public int getReqPlant() {
-    return (ratio_plant * weight / 100);
+    return (ratioPlant * weight / 100);
   }
 }

@@ -12,11 +12,11 @@ public class Road extends Facility {
   /**
    * Jalan merupakan jalan masuk Zoo.
    */
-  protected boolean is_entrance;
+  protected boolean roadEntrance;
   /**
    * Jalan merupakan jalan keluar Zoo.
    */
-  protected boolean is_exit;
+  protected boolean roadExit;
 
   /**
    * Constructor
@@ -27,23 +27,23 @@ public class Road extends Facility {
    */
   public Road(boolean accessible) {
     super(accessible);
-    facility_type = "Road";
-    is_entrance = false;
-    is_exit = false;
+    facilityType = "Road";
+    roadEntrance = false;
+    roadExit = false;
   }
 
   /**
-   * @return Nilai is_entrance.
+   * @return Nilai roadEntrance.
    */
   public boolean isEntrance() {
-    return is_entrance;
+    return roadEntrance;
   }
 
   /**
-   * @return Nilai is_exit.
+   * @return Nilai roadExit.
    */
   public boolean isExit() {
-    return is_exit;
+    return roadExit;
   }
 
   /**

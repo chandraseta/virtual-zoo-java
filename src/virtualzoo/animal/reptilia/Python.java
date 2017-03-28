@@ -15,22 +15,22 @@ public class Python extends Reptilia {
   /**
    * Constructor
    *
-   * Menciptakan python dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan python dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat python.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat python.
    */
-  public Python(int _x, int _y, int _weight) {
+  public Python(int locX, int locY, int animalWeight) {
     super();
     limb_count = 0;
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Carnivora(_weight, 40);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Carnivora(animalWeight, 40);
     ID = 9;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
   }
 
   /**

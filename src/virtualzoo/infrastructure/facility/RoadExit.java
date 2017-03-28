@@ -16,6 +16,6 @@ public class RoadExit extends Road {
    */
   RoadExit(boolean accessible) {
     super(accessible);
-    is_exit = true;
+    roadExit = true;
   }
 }

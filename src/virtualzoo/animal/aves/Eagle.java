@@ -15,21 +15,21 @@ public class Eagle extends Aves {
   /**
    * Constructor
    *
-   * Menciptakan eagle dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan eagle dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat eagle.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat eagle.
    */
-  public Eagle(int _x, int _y, int _weight) {
+  public Eagle(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Carnivora(_weight, 60);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Carnivora(animalWeight, 60);
     ID = 17;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = true;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = true;
   }
 
   /**

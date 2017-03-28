@@ -15,21 +15,21 @@ public class Clownfish extends Pisces {
   /**
    * Constructor
    *
-   * Menciptakan clownfish dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan clownfish dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat clownfish.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat clownfish.
    */
-  public Clownfish(int _x, int _y, int _weight) {
+  public Clownfish(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Omnivora(_weight, 30, 40);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Omnivora(animalWeight, 30, 40);
     ID = 14;
-    position.setLocation(_x, _y);
-    is_land_animal = false;
-    is_water_animal = true;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = false;
+    isWaterAnimal = true;
+    isAirAnimal = false;
   }
 
   /**

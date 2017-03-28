@@ -15,21 +15,21 @@ public class Tiger extends Mammalia {
   /**
    * Constructor
    *
-   * Menciptakan tiger dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan tiger dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat tiger.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat tiger.
    */
-  public Tiger(int _x, int _y, int _weight) {
+  public Tiger(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Carnivora(_weight, 50);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Carnivora(animalWeight, 50);
     ID = 3;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
   }
 
   /**

@@ -17,19 +17,19 @@ public abstract class AnimalDiet {
   /**
    * Atribut yang menentukan apakah Animal memakan daging atau tidak.
    */
-  protected boolean eat_meat;
+  protected boolean eatMeat;
   /**
    * Atribut yang menentukan apakah Animal memakan tumbuhan atau tidak.
    */
-  protected boolean eat_plant;
+  protected boolean eatPlant;
   /**
    * Nilai rasio berat daging yang diperlukan terhadap berat Animal.
    */
-  protected int ratio_meat;
+  protected int ratioMeat;
   /**
    * Nilai rasio berat tumbuhan yang diperlukan terhadap berat Animal.
    */
-  protected int ratio_plant;
+  protected int ratioPlant;
 
   /**
    * Menentukan apakah Animal yang dimaksud merupakan carnivora.
@@ -37,7 +37,7 @@ public abstract class AnimalDiet {
    * @return Nilai true/false apakah Animal herbivora.
    */
   public boolean isHerbivore() {
-    return (!eat_meat && eat_plant);
+    return (!eatMeat && eatPlant);
   }
 
   /**
@@ -46,7 +46,7 @@ public abstract class AnimalDiet {
    * @return Nilai true/false apakah Animal carnivora.
    */
   public boolean isCarnivore() {
-    return (eat_meat && !eat_plant);
+    return (eatMeat && !eatPlant);
   }
 
   /**
@@ -55,7 +55,7 @@ public abstract class AnimalDiet {
    * @return Nilai true/false apakah Animal omnivora.
    */
   public boolean isOmnivore() {
-    return (eat_meat && eat_plant);
+    return (eatMeat && eatPlant);
   }
 
   /**

@@ -15,7 +15,7 @@ public abstract class Facility extends Cell {
   /**
    * Jenis Facility yang ada di dalam Zoo
    */
-  protected String facility_type;
+  protected String facilityType;
 
   /**
    * Constructor

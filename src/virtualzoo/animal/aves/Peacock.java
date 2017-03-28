@@ -15,21 +15,21 @@ public class Peacock extends Aves {
   /**
    * Constructor
    *
-   * Menciptakan colibri dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan peacock dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat peacock.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat peacock.
    */
-  public Peacock(int _x, int _y, int _weight) {
+  public Peacock(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Omnivora(_weight, 20, 40);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Omnivora(animalWeight, 20, 40);
     ID = 19;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
   }
 
   /**

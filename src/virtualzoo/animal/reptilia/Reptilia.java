@@ -16,7 +16,7 @@ public abstract class Reptilia extends Animal {
    * Menciptakan reptilia dengan atribut default untuk reptilia pada umumnya
    */
   public Reptilia() {
-    limb_count = 4;
-    skin_type = "Scutes";
+    limbCount = 4;
+    skinType = "Scutes";
   }
 }

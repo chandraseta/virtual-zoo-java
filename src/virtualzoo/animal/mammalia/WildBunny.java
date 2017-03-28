@@ -15,24 +15,24 @@ public class WildBunny extends Mammalia {
   /**
    * Constructor
    *
-   * Menciptakan wild bunny dengan posisi (_x, _y) dan berat _weight.
+   * Menciptakan wild bunny dengan posisi (locX, locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat wild bunny.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat wild bunny.
    */
-  public WildBunny(int _x, int _y, int _weight) {
+  public WildBunny(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorWild();
-    animal_diet = new Carnivora(_weight, 90);
+    animalBehavior = new BehaviorWild();
+    animalDiet = new Carnivora(animalWeight, 90);
     ID = 0;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
 
     for (int id = 0; id < 22; id++) {
-      animal_behavior.addEnemy(id);
+      animalBehavior.addEnemy(id);
     }
   }
 

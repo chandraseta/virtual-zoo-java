@@ -14,7 +14,7 @@ public class BehaviorWild extends AnimalBehavior {
    * Menetapkan perilaku Animal menjadi liar
    */
   public void setBehavior() {
-    is_wild = true;
+    isWild = true;
   }
 
   /**

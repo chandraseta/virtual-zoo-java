@@ -23,23 +23,23 @@ public abstract class Animal implements Renderable {
   /**
    * Banyaknya alat gerak yang dimiliki Animal.
    */
-  protected int limb_count;
+  protected int limbCount;
   /**
    * Jenis kulit yang dimiliki Animal.
    */
-  protected String skin_type;
+  protected String skinType;
   /**
    * Atribut yang menentukan apakah Animal dapat hidup di habitat darat.
    */
-  protected boolean is_land_animal;
+  protected boolean isLandAnimal;
   /**
    * Atribut yang menentukan apakah Animal dapat hidup di habitat air.
    */
-  protected boolean is_water_animal;
+  protected boolean isWaterAnimal;
   /**
    * Atribut yang menentukan apakah Animal dpaat hidup di habitat udara.
    */
-  protected boolean is_air_animal;
+  protected boolean isAirAnimal;
   /**
    * Sebuah point yang menyatakan lokasi dari Animal.
    */
@@ -47,11 +47,11 @@ public abstract class Animal implements Renderable {
   /**
    * Atribut yang menentukan kelakuan Animal.
    */
-  protected AnimalBehavior animal_behavior;
+  protected AnimalBehavior animalBehavior;
   /**
    * Atribut yang menentukan klasifikasi makanan hewan.
    */
-  protected AnimalDiet animal_diet;
+  protected AnimalDiet animalDiet;
 
   /**
    * Mengembalikan ID Animal.
@@ -91,7 +91,7 @@ public abstract class Animal implements Renderable {
    * @return Nilai is_land_animal.
    */
   public boolean isLandAnimal() {
-    return is_land_animal;
+    return isLandAnimal;
   }
 
   /**
@@ -100,7 +100,7 @@ public abstract class Animal implements Renderable {
    * @return Nilai is_water_animal.
    */
   public boolean isWaterAnimal() {
-    return is_water_animal;
+    return isWaterAnimal;
   }
 
   /**
@@ -109,7 +109,7 @@ public abstract class Animal implements Renderable {
    * @return Nilai is_air_animal.
    */
   public boolean isAirAnimal() {
-    return is_air_animal;
+    return isAirAnimal;
   }
 
   /**
@@ -127,7 +127,7 @@ public abstract class Animal implements Renderable {
    * @return Nilai animal_behavior.
    */
   public AnimalBehavior getAnimalBehavior() {
-    return animal_behavior;
+    return animalBehavior;
   }
 
   /**
@@ -136,7 +136,7 @@ public abstract class Animal implements Renderable {
    * @return Nilai animal_diet.
    */
   public AnimalDiet getAnimalDiet() {
-    return animal_diet;
+    return animalDiet;
   }
 
   /**

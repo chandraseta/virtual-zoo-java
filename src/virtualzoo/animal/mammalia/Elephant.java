@@ -15,21 +15,21 @@ public class Elephant extends Mammalia {
   /**
    * Constructor
    *
-   * Menciptakan elephant dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan elephant dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat elephant.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat elephant.
    */
-  public Elephant(int _x, int _y, int _weight) {
+  public Elephant(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Herbivora(_weight, 80);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Herbivora(animalWeight, 80);
     ID = 7;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
   }
 
   /**

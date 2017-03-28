@@ -16,7 +16,7 @@ public abstract class Mammalia extends Animal {
    * Menciptakan mammalia dengan atribut default untuk mammalia pada umumnya
    */
   public Mammalia() {
-    limb_count = 4;
-    skin_type = "Hair";
+    limbCount = 4;
+    skinType = "Hair";
   }
 }

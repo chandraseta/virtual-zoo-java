@@ -16,7 +16,7 @@ public class RoadEntrance extends Road {
    */
   RoadEntrance(boolean accessible) {
     super(accessible);
-    is_entrance = true;
+    roadEntrance = true;
   }
 
 }

@@ -15,21 +15,21 @@ public class Giraffe extends Mammalia {
   /**
    * Constructor
    *
-   * Menciptakan giraffe dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan giraffe dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x _x Nilai absis posisi.
-   * @param _y _y Nilai ordinat posisi.
-   * @param _weight Nilai berat giraffe.
+   * @param locX locX Nilai absis posisi.
+   * @param locY locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat giraffe.
    */
-  public Giraffe(int _x, int _y, int _weight) {
+  public Giraffe(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Herbivora(_weight, 60);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Herbivora(animalWeight, 60);
     ID = 6;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = false;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = false;
   }
 
   /**

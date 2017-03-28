@@ -19,10 +19,10 @@ public class Park extends Facility {
    *
    * Membuat sebuah taman.
    */
-  public Park(boolean accessible, String _name) {
+  public Park(boolean accessible, String facilityName) {
     super(accessible);
-    facility_type = "Park";
-    name = _name;
+    facilityType = "Park";
+    name = facilityName;
   }
 
   /**

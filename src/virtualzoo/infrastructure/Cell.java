@@ -14,7 +14,7 @@ public abstract class Cell implements Renderable {
   /**
    * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung
    */
-  protected boolean is_accessible;
+  protected boolean infrastructureAccessible;
 
   /**
    * Constructor
@@ -23,15 +23,15 @@ public abstract class Cell implements Renderable {
    * @param accessible Nilai true/false cell dapat diakses.
    */
   public Cell(boolean accessible) {
-    is_accessible = accessible;
+    infrastructureAccessible = accessible;
   }
 
   /**
-   * Getter nilai is_accessible
+   * Getter nilai infrastructureAccessible
    *
-   * @return Nilai is_accessible
+   * @return Nilai infrastructureAccessible
    */
   public boolean isAccessible() {
-    return is_accessible;
+    return infrastructureAccessible;
   }
 }

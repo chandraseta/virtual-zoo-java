@@ -14,15 +14,15 @@ public class Herbivora extends AnimalDiet {
    *
    * Menciptakan Herbivora (Animal pemakan tumbuhan).
    *
-   * @param _weight Nilai berat Animal (jalam kilogram).
-   * @param _ratio_plant Rasio (%) jumlah tumbuhan yang dibutuhkan terhadap berat Animal.
+   * @param animalWeight Nilai berat Animal (jalam kilogram).
+   * @param animalRatioPlant Rasio (%) jumlah tumbuhan yang dibutuhkan terhadap berat Animal.
    */
-  public Herbivora(int _weight, int _ratio_plant) {
-    weight = _weight;
-    ratio_meat = 0;
-    ratio_plant = _ratio_plant;
-    eat_meat = false;
-    eat_plant = true;
+  public Herbivora(int animalWeight, int animalRatioPlant) {
+    weight = animalWeight;
+    ratioMeat = 0;
+    ratioPlant = animalRatioPlant;
+    eatMeat = false;
+    eatPlant = true;
   }
 
   /**
@@ -40,6 +40,6 @@ public class Herbivora extends AnimalDiet {
    * @return Jumlah tumbuhan yang dibutuhkan untuk Animal tertentu
    */
   public int getReqPlant() {
-    return (ratio_plant * weight / 100);
+    return (ratioPlant * weight / 100);
   }
 }

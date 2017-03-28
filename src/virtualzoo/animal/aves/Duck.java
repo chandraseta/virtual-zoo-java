@@ -15,21 +15,21 @@ public class Duck extends Aves {
   /**
    * Constructor
    *
-   * Menciptakan colibri dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan duck dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat duck.
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat duck.
    */
-  public Duck(int _x, int _y, int _weight) {
+  public Duck(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Omnivora(_weight, 60, 60);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Omnivora(animalWeight, 60, 60);
     ID = 20;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = true;
-    is_air_animal = true;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = true;
+    isAirAnimal = true;
   }
 
   /**

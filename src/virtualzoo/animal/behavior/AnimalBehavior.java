@@ -21,7 +21,7 @@ public abstract class AnimalBehavior {
   /**
    * Atribut menentukan apakah perilaku Animal jinak atau liar.
    */
-  protected boolean is_wild;
+  protected boolean isWild;
 
   /**
    * Mengembalikan perilaku Animal
@@ -29,7 +29,7 @@ public abstract class AnimalBehavior {
    * @return Nilai is_wild
    */
   public boolean getBehavior() {
-    return is_wild;
+    return isWild;
   }
 
   /**

@@ -15,21 +15,21 @@ public class Owl extends Aves {
   /**
    * Constructor
    *
-   * Menciptakan colibri dengan posisi (_x,_y) dan berat _weight.
+   * Menciptakan owl dengan posisi (locX,locY) dan berat animalWeight.
    *
-   * @param _x Nilai absis posisi.
-   * @param _y Nilai ordinat posisi.
-   * @param _weight Nilai berat elephant
+   * @param locX Nilai absis posisi.
+   * @param locY Nilai ordinat posisi.
+   * @param animalWeight Nilai berat owl.
    */
-  public Owl(int _x, int _y, int _weight) {
+  public Owl(int locX, int locY, int animalWeight) {
     super();
-    animal_behavior = new BehaviorTame();
-    animal_diet = new Carnivora(_weight, 60);
+    animalBehavior = new BehaviorTame();
+    animalDiet = new Carnivora(animalWeight, 60);
     ID = 16;
-    position.setLocation(_x, _y);
-    is_land_animal = true;
-    is_water_animal = false;
-    is_air_animal = true;
+    position.setLocation(locX, locY);
+    isLandAnimal = true;
+    isWaterAnimal = false;
+    isAirAnimal = true;
   }
 
   /**

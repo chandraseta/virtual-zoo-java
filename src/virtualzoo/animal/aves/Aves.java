@@ -18,7 +18,7 @@ public abstract class Aves extends Animal {
    * Menciptakan Aves dengan atribut default untuk aves pada umumnya
    */
   public Aves() {
-    limb_count = 2;
-    skin_type = "Feather";
+    limbCount = 2;
+    skinType = "Feather";
   }
 }

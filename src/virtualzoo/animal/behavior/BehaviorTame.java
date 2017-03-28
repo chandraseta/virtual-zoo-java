@@ -13,7 +13,7 @@ public class BehaviorTame extends AnimalBehavior {
    * Menetapkan perilaku Animal menjadi jinak
    */
   public void setBehavior() {
-    is_wild = false;
+    isWild = false;
   }
 
   /**
