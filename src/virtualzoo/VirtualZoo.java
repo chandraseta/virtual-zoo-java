@@ -15,7 +15,7 @@ public class VirtualZoo {
    */
   public static void main(String[] args) {
     try {
-      new Driver();
+      new VirtualZooUI();
     } catch (Exception e) {
       System.err.println("Error: " + e.getMessage());
     }

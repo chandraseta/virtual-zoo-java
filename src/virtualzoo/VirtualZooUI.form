@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="virtualzoo.VirtualZooUI">
+  <grid id="27dc6" binding="BG" layout-manager="FormLayout">
+    <rowspec value="center:d:grow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:d:grow"/>
+    <colspec value="fill:d:grow"/>
+    <constraints>
+      <xy x="13" y="42" width="770" height="496"/>
+    </constraints>
+    <properties>
+      <background color="-2368549"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="98d06" class="javax.swing.JButton" binding="ExitButton">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <actionCommand value=""/>
+          <background color="-13619152"/>
+          <text value="Exit"/>
+        </properties>
+      </component>
+      <component id="729ee" class="javax.swing.JButton" binding="FoodInfoButton">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <background color="-13619152"/>
+          <text value="Zoo Info"/>
+        </properties>
+      </component>
+      <component id="6aa7e" class="javax.swing.JButton" binding="TourButton">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <background color="-13619152"/>
+          <text value="Tour Zoo"/>
+        </properties>
+      </component>
+      <component id="62f6b" class="javax.swing.JButton" binding="DisplayButton">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false"/>
+        </constraints>
+        <properties>
+          <background color="-13619152"/>
+          <text value="Display Zoo"/>
+        </properties>
+      </component>
+      <component id="10b36" class="javax.swing.JTextPane" binding="Title">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-2368549"/>
+          <editable value="false"/>
+          <font name="HelveticaNeueLT Std Med" size="28"/>
+          <foreground color="-13619152"/>
+          <text value="Virtual Zoo by MeinZoo"/>
+        </properties>
+        <clientProperties>
+          <JEditorPane.honorDisplayProperties class="java.lang.Boolean" value="false"/>
+          <JEditorPane.w3cLengthUnits class="java.lang.Boolean" value="false"/>
+        </clientProperties>
+      </component>
+    </children>
+  </grid>
+</form>
