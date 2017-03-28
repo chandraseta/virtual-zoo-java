@@ -1,4 +1,6 @@
 
+C:\Users\Holy\Projects\VirtualZoo-Java>java -cp lib/jdepend-2.9.5.jar jdepend.textui.JDepend out 
+
 --------------------------------------------------
 - Package: java.awt
 --------------------------------------------------
@@ -23,6 +25,75 @@ No stats available: package referenced, but not analyzed.
 - Package: java.util.concurrent
 --------------------------------------------------
 No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: test.infrastructure.facility
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 5
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 3
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    test.infrastructure.facility.ParkTest
+    test.infrastructure.facility.RestaurantTest
+    test.infrastructure.facility.RoadEntranceTest
+    test.infrastructure.facility.RoadExitTest
+    test.infrastructure.facility.RoadTest
+
+Depends Upon:
+    java.lang
+    org.junit
+    virtualzoo.infrastructure.facility
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: test.infrastructure.habitat
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 3
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    test.infrastructure.habitat.AirHabitatTest
+    test.infrastructure.habitat.LandHabitatTest
+    test.infrastructure.habitat.WaterHabitatTest
+
+Depends Upon:
+    java.lang
+    org.junit
+    virtualzoo.infrastructure.habitat
+
+Used By:
+    Not used by any packages.
 
 --------------------------------------------------
 - Package: virtualzoo
@@ -349,12 +420,12 @@ Stats:
     Concrete Classes: 5
     Abstract Classes: 1
 
-    Ca: 1
+    Ca: 2
     Ce: 2
 
     A: 0.17
-    I: 0.67
-    D: 0.17
+    I: 0.5
+    D: 0.33
 
 Abstract Classes:
     virtualzoo.infrastructure.facility.Facility
@@ -371,6 +442,7 @@ Depends Upon:
     virtualzoo.infrastructure
 
 Used By:
+    test.infrastructure.facility
     virtualzoo.zoo
 
 --------------------------------------------------
@@ -382,12 +454,12 @@ Stats:
     Concrete Classes: 3
     Abstract Classes: 1
 
-    Ca: 1
+    Ca: 2
     Ce: 1
 
     A: 0.25
-    I: 0.5
-    D: 0.25
+    I: 0.33
+    D: 0.42
 
 Abstract Classes:
     virtualzoo.infrastructure.habitat.Habitat
@@ -401,6 +473,7 @@ Depends Upon:
     virtualzoo.infrastructure
 
 Used By:
+    test.infrastructure.habitat
     virtualzoo.zoo
 
 --------------------------------------------------
@@ -495,9 +568,12 @@ Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
 
 java.awt,0,0,7,0,0,0,1,1
 java.io,0,0,6,0,0,0,1,1
-java.lang,0,0,12,0,0,0,1,1
+java.lang,0,0,14,0,0,0,1,1
 java.util,0,0,3,0,0,0,1,1
 java.util.concurrent,0,0,1,0,0,0,1,1
+org.junit,0,0,2,0,0,0,1,1
+test.infrastructure.facility,5,0,0,3,0,1,0,1
+test.infrastructure.habitat,3,0,0,3,0,1,0,1
 virtualzoo,2,0,0,4,0,1,0,1
 virtualzoo.animal,1,1,5,5,1,0.5,0.5,1
 virtualzoo.animal.aves,7,1,1,6,0.14,0.86,0,1
@@ -507,7 +583,7 @@ virtualzoo.animal.mammalia,9,1,1,6,0.11,0.86,0.03,1
 virtualzoo.animal.pisces,4,1,1,6,0.25,0.86,0.11,1
 virtualzoo.animal.reptilia,6,1,1,6,0.17,0.86,0.02,1
 virtualzoo.infrastructure,1,1,3,2,1,0.4,0.4,1
-virtualzoo.infrastructure.facility,6,1,1,2,0.17,0.67,0.17,1
-virtualzoo.infrastructure.habitat,4,1,1,1,0.25,0.5,0.25,1
+virtualzoo.infrastructure.facility,6,1,2,2,0.17,0.5,0.33,1
+virtualzoo.infrastructure.habitat,4,1,2,1,0.25,0.33,0.42,1
 virtualzoo.misc,2,1,3,2,0.5,0.4,0.1,1
 virtualzoo.zoo,6,0,1,16,0,0.94,0.06,1
