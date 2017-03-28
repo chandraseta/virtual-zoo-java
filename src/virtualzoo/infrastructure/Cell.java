@@ -12,7 +12,7 @@ import virtualzoo.misc.Renderable;
 public abstract class Cell implements Renderable {
 
   /**
-   * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung
+   * Suatu Cell dapat dikunjungi atau tidak oleh pengunjung.
    */
   protected boolean infrastructureAccessible;
 
@@ -27,9 +27,9 @@ public abstract class Cell implements Renderable {
   }
 
   /**
-   * Getter nilai infrastructureAccessible
+   * Getter nilai infrastructureAccessible.
    *
-   * @return Nilai infrastructureAccessible
+   * @return Nilai infrastructureAccessible.
    */
   public boolean isAccessible() {
     return infrastructureAccessible;

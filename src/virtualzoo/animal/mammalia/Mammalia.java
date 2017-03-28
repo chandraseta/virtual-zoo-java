@@ -13,7 +13,7 @@ import virtualzoo.animal.Animal;
 public abstract class Mammalia extends Animal {
 
   /**
-   * Menciptakan mammalia dengan atribut default untuk mammalia pada umumnya
+   * Menciptakan mammalia dengan atribut default untuk mammalia pada umumnya.
    */
   public Mammalia() {
     limbCount = 4;

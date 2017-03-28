@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Herbivora;
  */
 public class Giraffe extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan giraffe dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX locX Nilai absis posisi.
    * @param locY locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat giraffe.
@@ -25,7 +25,7 @@ public class Giraffe extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Herbivora(animalWeight, 60);
-    ID = 6;
+    id = 6;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

@@ -14,10 +14,11 @@ public class Restaurant extends Facility {
    */
   protected String name;
 
-  /**
+  /** <p>
    * Constructor
    *
    * Membuat sebuah restaurant.
+   * </p>
    */
   public Restaurant(boolean accessible, String facilityName) {
     super(accessible);

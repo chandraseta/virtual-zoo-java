@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Omnivora;
  */
 public class Monkey extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan monkey dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat monkey.
@@ -25,7 +25,7 @@ public class Monkey extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Omnivora(animalWeight, 10, 40);
-    ID = 5;
+    id = 5;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

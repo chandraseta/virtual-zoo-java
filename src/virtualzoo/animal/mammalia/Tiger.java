@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class Tiger extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan tiger dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat tiger.
@@ -25,7 +25,7 @@ public class Tiger extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Carnivora(animalWeight, 50);
-    ID = 3;
+    id = 3;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

@@ -14,10 +14,11 @@ public class Park extends Facility {
    */
   protected String name;
 
-  /**
+  /** <p>
    * Constructor
    *
    * Membuat sebuah taman.
+   * </p>
    */
   public Park(boolean accessible, String facilityName) {
     super(accessible);

@@ -17,10 +17,11 @@ public abstract class Habitat extends Cell {
    */
   protected char type;
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan sebuah habitat dalam suatu Cell.
+   * </p>
    */
   public Habitat() {
     super(false);

@@ -13,7 +13,7 @@ import virtualzoo.infrastructure.Cell;
 public abstract class Facility extends Cell {
 
   /**
-   * Jenis Facility yang ada di dalam Zoo
+   * Jenis Facility yang ada di dalam Zoo.
    */
   protected String facilityType;
 

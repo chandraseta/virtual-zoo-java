@@ -9,10 +9,11 @@ package virtualzoo.infrastructure.habitat;
  */
 public class LandHabitat extends Habitat {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan habitat darat.
+   * </p>
    */
   public LandHabitat() {
     super();

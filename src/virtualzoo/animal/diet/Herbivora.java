@@ -9,11 +9,11 @@ package virtualzoo.animal.diet;
  */
 public class Herbivora extends AnimalDiet {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan Herbivora (Animal pemakan tumbuhan).
-   *
+   * </p>
    * @param animalWeight Nilai berat Animal (jalam kilogram).
    * @param animalRatioPlant Rasio (%) jumlah tumbuhan yang dibutuhkan terhadap berat Animal.
    */
@@ -26,18 +26,20 @@ public class Herbivora extends AnimalDiet {
   }
 
   /**
-   * Getter nilai makanan Animal dalam bentuk daging yang dibutuhkan
-   *
-   * @return Jumlah daging yang dibutuhkan untuk Animal tertentu
+   * <p>
+   * Getter nilai makanan Animal dalam bentuk daging yang dibutuhkan.
+   * </p>
+   * @return Jumlah daging yang dibutuhkan untuk Animal tertentu.
    */
   public int getReqMeat() {
     return 0;
   }
 
   /**
-   * Getter nilai makanan Animal dalam bentuk tumbuhan yang dibutuhkan
-   *
-   * @return Jumlah tumbuhan yang dibutuhkan untuk Animal tertentu
+   * <p>
+   * Getter nilai makanan Animal dalam bentuk tumbuhan yang dibutuhkan.
+   * </p>
+   * @return Jumlah tumbuhan yang dibutuhkan untuk Animal tertentu.
    */
   public int getReqPlant() {
     return (ratioPlant * weight / 100);

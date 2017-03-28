@@ -11,7 +11,7 @@ package virtualzoo.animal.behavior;
 public class BehaviorWild extends AnimalBehavior {
 
   /**
-   * Menetapkan perilaku Animal menjadi liar
+   * Menetapkan perilaku Animal menjadi liar.
    */
   public void setBehavior() {
     isWild = true;
@@ -21,7 +21,7 @@ public class BehaviorWild extends AnimalBehavior {
    * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau ditambahkan
+   * @param id Nilai ID Animal yang mau ditambahkan.
    */
   public void addEnemy(int id) {
     enemy.add(id);
@@ -31,7 +31,7 @@ public class BehaviorWild extends AnimalBehavior {
    * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau dihapus
+   * @param id Nilai ID Animal yang mau dihapus.
    */
   public void removeEnemy(int id) {
     enemy.remove(id);

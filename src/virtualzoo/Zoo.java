@@ -1,14 +1,15 @@
 package virtualzoo;
 
-import virtualzoo.animal.*;
-import virtualzoo.infrastructure.*;
-import virtualzoo.infrastructure.facility.*;
-import virtualzoo.misc.Person;
+import java.awt.Point;
+import java.lang.Character;
+import java.lang.System;
 import java.util.Set;
 import java.util.Vector;
-import java.awt.Point;
-import java.lang.*;
-
+import virtualzoo.animal.Animal;
+import virtualzoo.infrastructure.Cage;
+import virtualzoo.infrastructure.Cell;
+import virtualzoo.infrastructure.facility.Road;
+import virtualzoo.misc.Person;
 
 /**
  * Kelas Zoo berisi elemen-elemen dari virtual zoo.
@@ -21,7 +22,7 @@ public class Zoo {
   private static final int LENGTH = 20;
   private static final int WIDTH = 20;
   private Cell [][] map;
-  private char map_char [][];
+  private char [][] mapChar;
   private Vector<Cage> cages;
   private Set<Point> entrance;
   private Set<Point> exit;
@@ -32,11 +33,11 @@ public class Zoo {
    */
   public Zoo()  {
     map = new Cell[WIDTH][LENGTH];
-    map_char = new char[WIDTH][LENGTH];
+    mapChar = new char[WIDTH][LENGTH];
     for (int i = 0; i < WIDTH; ++i) {
       for (int j = 0; j < LENGTH; ++j) {
         map[i][j] = null;
-        map_char[i][j] = ' ';
+        mapChar[i][j] = ' ';
       }
     }
   }
@@ -78,14 +79,14 @@ public class Zoo {
   /**
    * @return Set berisi point lokasi exit zoo.
    */
-  public Set<Point> getExit(){
+  public Set<Point> getExit() {
     return exit;
   }
 
   /**
    * @return Vector berisi point lokasi cage zoo.
    */
-  public Vector<Cage> getCages(){
+  public Vector<Cage> getCages() {
     return cages;
   }
 
@@ -119,23 +120,23 @@ public class Zoo {
   public void renderMap(Person visitor) {
     for (int i = 0; i < WIDTH; ++i) {
       for (int j = 0; j < LENGTH; ++j) {
-        map_char[i][j] = map[i][j].render();
+        mapChar[i][j] = map[i][j].render();
       }
     }
     for (Cage cage: cages) {
       for (Point p: cage.getArea()) {
-        map_char[(int) p.getY()][(int) p.getX()] =
-            Character.toUpperCase(map_char[(int) p.getY()][(int) p.getX()]);
+        mapChar[(int) p.getY()][(int) p.getX()] =
+            Character.toUpperCase(mapChar[(int) p.getY()][(int) p.getX()]);
       }
       for (Animal a: cage.getAnimal()) {
         Point p = a.getPosition();
-        map_char[(int) p.getY()][(int) p.getX()] = a.render();
+        mapChar[(int) p.getY()][(int) p.getX()] = a.render();
       }
     }
     Point p = visitor.getPosition();
-    if (p.getX() >= 0 && p.getX() < LENGTH &&
-        p.getY() >= 0 && p.getY() < WIDTH) {
-      map_char[(int) p.getY()][(int) p.getX()] = visitor.render();
+    if (p.getX() >= 0 && p.getX() < LENGTH
+        && p.getY() >= 0 && p.getY() < WIDTH) {
+      mapChar[(int) p.getY()][(int) p.getX()] = visitor.render();
     }
   }
 
@@ -149,7 +150,7 @@ public class Zoo {
   public void printMap(int ux, int uy, int lx, int ly) {
     for (int i = uy; i <= ly; ++i) {
       for (int j = ux; j <= lx; ++j) {
-        System.out.print(map_char[i][j]);
+        System.out.print(mapChar[i][j]);
       }
       System.out.println();
     }

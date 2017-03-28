@@ -24,7 +24,7 @@ public abstract class AnimalBehavior {
   protected boolean isWild;
 
   /**
-   * Mengembalikan perilaku Animal
+   * Mengembalikan perilaku Animal.
    *
    * @return Nilai is_wild
    */
@@ -33,7 +33,7 @@ public abstract class AnimalBehavior {
   }
 
   /**
-   * Menetapkan perilaku Animal
+   * Menetapkan perilaku Animal.
    */
   public abstract void setBehavior();
 
@@ -41,7 +41,7 @@ public abstract class AnimalBehavior {
    * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang akan ditambahkan
+   * @param id Nilai ID Animal yang akan ditambahkan.
    */
   public abstract void addEnemy(int id);
 
@@ -49,7 +49,7 @@ public abstract class AnimalBehavior {
    * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang akan dihapus
+   * @param id Nilai ID Animal yang akan dihapus.
    */
   public abstract void removeEnemy(int id);
 

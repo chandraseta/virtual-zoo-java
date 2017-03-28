@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class Crocodile extends Reptilia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan crocodile dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat crocodile.
@@ -25,7 +25,7 @@ public class Crocodile extends Reptilia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Carnivora(animalWeight, 60);
-    ID = 8;
+    id = 8;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = true;
@@ -33,7 +33,7 @@ public class Crocodile extends Reptilia {
   }
 
   /**
-   * Mengatur interaksi dengan crocodile
+   * Mengatur interaksi dengan crocodile.
    */
   public void interact() {
     System.out.println("The crocodile is laying still on a slab of rock");

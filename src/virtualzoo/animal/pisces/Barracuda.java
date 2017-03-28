@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class Barracuda extends Pisces {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan barracuda dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat barracuda.
@@ -25,7 +25,7 @@ public class Barracuda extends Pisces {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Carnivora(animalWeight, 60);
-    ID = 15;
+    id = 15;
     position.setLocation(locX, locY);
     isLandAnimal = false;
     isWaterAnimal = true;

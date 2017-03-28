@@ -18,11 +18,11 @@ public class Road extends Facility {
    */
   protected boolean roadExit;
 
-  /**
+  /** <p>
    * Constructor
    *
    * Membuat sebuah jalan.
-   *
+   * </p>
    * @param accessible Jalan dapat diakses pengunjung.
    */
   public Road(boolean accessible) {

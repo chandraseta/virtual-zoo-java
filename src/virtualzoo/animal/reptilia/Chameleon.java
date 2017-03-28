@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Omnivora;
  */
 public class Chameleon extends Reptilia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan chameleon dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat chameleon.
@@ -25,7 +25,7 @@ public class Chameleon extends Reptilia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Omnivora(animalWeight, 20, 50);
-    ID = 12;
+    id = 12;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;
@@ -33,7 +33,7 @@ public class Chameleon extends Reptilia {
   }
 
   /**
-   * Mengatur interaksi dengan chameleon
+   * Mengatur interaksi dengan chameleon.
    */
   public void interact() {
     System.out.println("The chameleon can be barely seen");

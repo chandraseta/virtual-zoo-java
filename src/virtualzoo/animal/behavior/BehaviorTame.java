@@ -10,7 +10,7 @@ package virtualzoo.animal.behavior;
 public class BehaviorTame extends AnimalBehavior {
 
   /**
-   * Menetapkan perilaku Animal menjadi jinak
+   * Menetapkan perilaku Animal menjadi jinak.
    */
   public void setBehavior() {
     isWild = false;
@@ -20,7 +20,7 @@ public class BehaviorTame extends AnimalBehavior {
    * Menambahkan Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau ditambahkan
+   * @param id Nilai ID Animal yang mau ditambahkan.
    */
   public void addEnemy(int id) {
   }
@@ -29,7 +29,7 @@ public class BehaviorTame extends AnimalBehavior {
    * Menghapus Animal yang tidak bisa disatukan dalam satu kandang dengan
    * objek pengguna.
    *
-   * @param id Nilai ID Animal yang mau dihapus
+   * @param id Nilai ID Animal yang mau dihapus.
    */
   public void removeEnemy(int id) {
   }

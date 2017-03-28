@@ -13,7 +13,7 @@ import virtualzoo.animal.Animal;
 public abstract class Pisces extends Animal {
 
   /**
-   * Menciptakan pisces dengan atribut default untuk pisces pada umumnya
+   * Menciptakan pisces dengan atribut default untuk pisces pada umumnya.
    */
   public Pisces() {
     limbCount = 0;

@@ -13,7 +13,7 @@ import virtualzoo.animal.Animal;
 public abstract class Reptilia extends Animal {
 
   /**
-   * Menciptakan reptilia dengan atribut default untuk reptilia pada umumnya
+   * Menciptakan reptilia dengan atribut default untuk reptilia pada umumnya.
    */
   public Reptilia() {
     limbCount = 4;

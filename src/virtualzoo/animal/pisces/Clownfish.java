@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Omnivora;
  */
 public class Clownfish extends Pisces {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan clownfish dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat clownfish.
@@ -25,7 +25,7 @@ public class Clownfish extends Pisces {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Omnivora(animalWeight, 30, 40);
-    ID = 14;
+    id = 14;
     position.setLocation(locX, locY);
     isLandAnimal = false;
     isWaterAnimal = true;

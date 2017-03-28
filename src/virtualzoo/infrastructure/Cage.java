@@ -1,14 +1,15 @@
 package virtualzoo.infrastructure;
 
 import java.awt.Point;
-import java.util.*;
+import java.util.Random;
+import java.util.Set;
+import java.util.Vector;
 import virtualzoo.animal.Animal;
 import virtualzoo.animal.behavior.AnimalBehavior;
 import virtualzoo.animal.behavior.BehaviorWild;
 
-
 /**
- * Kelas Cage yang memiliki area dan berisi animal
+ * Kelas Cage yang memiliki area dan berisi animal.
  *
  * @author Felix Limanta - 13515065
  * @version 3.0
@@ -22,7 +23,7 @@ public class Cage {
   private int type;
   private Set<Point> area;
   private Vector<Animal> animal;
-  int nbAnimal;
+  private int nbAnimal;
 
   /**
    * Constructor
@@ -80,7 +81,7 @@ public class Cage {
         boolean placeable = true;
         BehaviorWild wild = (BehaviorWild) behavior;
         for (int i = 0; i < animal.size() && placeable; ++i) {
-          placeable = wild.isEnemy(animal.elementAt(i).getID());
+          placeable = wild.isEnemy(animal.elementAt(i).getId());
         }
         if (placeable) {
           animal.add(a);

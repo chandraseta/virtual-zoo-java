@@ -9,10 +9,11 @@ package virtualzoo.infrastructure.facility;
  */
 public class RoadExit extends Road {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Kelas RoadExit mendefinisikan atribut untuk jalan keluar.
+   * </p>
    */
   RoadExit(boolean accessible) {
     super(accessible);

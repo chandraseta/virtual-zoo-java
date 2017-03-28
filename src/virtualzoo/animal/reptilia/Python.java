@@ -12,21 +12,21 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class Python extends Reptilia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan python dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat python.
    */
   public Python(int locX, int locY, int animalWeight) {
     super();
-    limb_count = 0;
+    limbCount = 0;
     animalBehavior = new BehaviorTame();
     animalDiet = new Carnivora(animalWeight, 40);
-    ID = 9;
+    id = 9;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

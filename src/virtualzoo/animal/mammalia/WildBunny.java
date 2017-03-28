@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class WildBunny extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan wild bunny dengan posisi (locX, locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat wild bunny.
@@ -25,7 +25,7 @@ public class WildBunny extends Mammalia {
     super();
     animalBehavior = new BehaviorWild();
     animalDiet = new Carnivora(animalWeight, 90);
-    ID = 0;
+    id = 0;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

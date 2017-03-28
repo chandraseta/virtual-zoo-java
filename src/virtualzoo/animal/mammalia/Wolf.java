@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Carnivora;
  */
 public class Wolf extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan wolf dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat elephant.
@@ -25,7 +25,7 @@ public class Wolf extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Carnivora(animalWeight, 50);
-    ID = 1;
+    id = 1;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

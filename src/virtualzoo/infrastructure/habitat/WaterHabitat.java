@@ -9,10 +9,11 @@ package virtualzoo.infrastructure.habitat;
  */
 public class WaterHabitat extends Habitat {
 
-  /**
+  /** <p>
    * Constructor
    *
    * Menciptakan habitat air.
+   * </p>
    */
   public WaterHabitat() {
     super();

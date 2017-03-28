@@ -4,15 +4,19 @@ import virtualzoo.animal.behavior.BehaviorTame;
 import virtualzoo.animal.diet.Herbivora;
 
 /**
- * Created by Rionaldi Chandraset on 27/03/2017.
+ * Kelas Zebra mendefinisikan atribut untuk zebra.
+ *
+ * @author Rionaldi Chandraseta - 13515077
+ * @version 3.0
+ * @since 3.0
  */
 public class Zebra extends Mammalia {
 
-  /**
+  /** <p>
    * Constructor
    *
-   * Menciptakan elephant dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * Menciptakan zebra dengan posisi (locX,locY) dan berat animalWeight.
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat zebra.
@@ -21,7 +25,7 @@ public class Zebra extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Herbivora(animalWeight, 45);
-    ID = 4;
+    id = 4;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;

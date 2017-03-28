@@ -1,10 +1,9 @@
 package virtualzoo.animal;
 
+import java.awt.Point;
 import virtualzoo.animal.behavior.AnimalBehavior;
 import virtualzoo.animal.diet.AnimalDiet;
 import virtualzoo.misc.Renderable;
-
-import java.awt.Point;
 
 /**
  * Kelas Animal merupakan superclass untuk semua jenis hewan
@@ -19,7 +18,7 @@ public abstract class Animal implements Renderable {
   /**
    * ID unik untuk setiap jenis Animal.
    */
-  protected int ID;
+  protected int id;
   /**
    * Banyaknya alat gerak yang dimiliki Animal.
    */
@@ -58,8 +57,8 @@ public abstract class Animal implements Renderable {
    *
    * @return Nilai ID.
    */
-  public int getID() {
-    return ID;
+  public int getId() {
+    return id;
   }
 
   /**

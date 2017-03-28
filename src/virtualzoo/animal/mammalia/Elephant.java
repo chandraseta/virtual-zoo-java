@@ -12,11 +12,11 @@ import virtualzoo.animal.diet.Herbivora;
  */
 public class Elephant extends Mammalia {
 
-  /**
+  /**<p>
    * Constructor
    *
    * Menciptakan elephant dengan posisi (locX,locY) dan berat animalWeight.
-   *
+   * </p>
    * @param locX Nilai absis posisi.
    * @param locY Nilai ordinat posisi.
    * @param animalWeight Nilai berat elephant.
@@ -25,7 +25,7 @@ public class Elephant extends Mammalia {
     super();
     animalBehavior = new BehaviorTame();
     animalDiet = new Herbivora(animalWeight, 80);
-    ID = 7;
+    id = 7;
     position.setLocation(locX, locY);
     isLandAnimal = true;
     isWaterAnimal = false;
