@@ -28,7 +28,7 @@ public class ChameleonTest {
    * </p>
    */
   @Before
-  public void ChameleonSetUpTest() {
+  public void chameleonSetUpTest() {
     chameleon = new Chameleon(2, 3, 80);
   }
 

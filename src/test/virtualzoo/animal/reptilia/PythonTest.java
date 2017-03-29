@@ -28,7 +28,7 @@ public class PythonTest {
    * </p>
    */
   @Before
-  public void PythonSetUpTest() {
+  public void pythonSetUpTest() {
     python = new Python(2, 3, 80);
   }
 

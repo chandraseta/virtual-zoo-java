@@ -28,7 +28,7 @@ public class MonkeyTest {
    * </p>
    */
   @Before
-  public void MonkeySetUpTest() {
+  public void monkeySetUpTest() {
     monkey = new Monkey(2, 3, 80);
   }
 

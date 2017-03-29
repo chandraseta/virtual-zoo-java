@@ -28,7 +28,7 @@ public class ZebraTest {
    * </p>
    */
   @Before
-  public void ZebraSetUpTest() {
+  public void zebraSetUpTest() {
     zebra = new Zebra(2, 3, 80);
   }
 

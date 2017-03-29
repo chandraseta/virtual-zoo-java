@@ -28,7 +28,7 @@ public class SharkTest {
    * </p>
    */
   @Before
-  public void SharkSetUpTest() {
+  public void sharkSetUpTest() {
     shark = new Shark(2, 3, 80);
   }
 

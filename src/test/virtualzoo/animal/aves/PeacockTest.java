@@ -28,7 +28,7 @@ public class PeacockTest {
    * </p>
    */
   @Before
-  public void PeacockSetUpTest() {
+  public void peacockSetUpTest() {
     peacock = new Peacock(2, 3, 80);
   }
 

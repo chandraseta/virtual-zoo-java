@@ -28,7 +28,7 @@ public class WildBunnyTest {
    * </p>
    */
   @Before
-  public void WildBunnySetUpTest() {
+  public void wildBunnySetUpTest() {
     wildBunny = new WildBunny(2, 3, 80);
   }
 

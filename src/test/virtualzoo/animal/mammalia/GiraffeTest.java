@@ -28,7 +28,7 @@ public class GiraffeTest {
    * </p>
    */
   @Before
-  public void GiraffeSetUpTest() {
+  public void giraffeSetUpTest() {
     giraffe = new Giraffe(2, 3, 80);
   }
 

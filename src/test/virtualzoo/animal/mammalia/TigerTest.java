@@ -28,7 +28,7 @@ public class TigerTest {
    * </p>
    */
   @Before
-  public void TigerSetUpTest() {
+  public void tigerSetUpTest() {
     tiger = new Tiger(2, 3, 80);
   }
 

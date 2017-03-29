@@ -28,7 +28,7 @@ public class IguanaTest {
    * </p>
    */
   @Before
-  public void IguanaSetUpTest() {
+  public void iguanaSetUpTest() {
     iguana = new Iguana(2, 3, 80);
   }
 

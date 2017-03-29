@@ -28,7 +28,7 @@ public class CrocodileTest {
    * </p>
    */
   @Before
-  public void CrocodileSetUpTest() {
+  public void crocodileSetUpTest() {
     crocodile = new Crocodile(2, 3, 80);
   }
 

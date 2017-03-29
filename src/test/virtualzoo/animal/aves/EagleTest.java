@@ -28,7 +28,7 @@ public class EagleTest {
    * </p>
    */
   @Before
-  public void EagleSetUpTest() {
+  public void eagleSetUpTest() {
     eagle = new Eagle(2, 3, 80);
   }
 

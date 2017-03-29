@@ -28,7 +28,7 @@ public class LionTest {
    * </p>
    */
   @Before
-  public void LionSetUpTest() {
+  public void lionSetUpTest() {
     lion = new Lion(2, 3, 80);
   }
 

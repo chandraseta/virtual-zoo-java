@@ -28,7 +28,7 @@ public class ClownfishTest {
    * </p>
    */
   @Before
-  public void ClownfishSetUpTest() {
+  public void clownfishSetUpTest() {
     clownfish = new Clownfish(2, 3, 80);
   }
 

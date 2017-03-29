@@ -28,7 +28,7 @@ public class DuckTest {
    * </p>
    */
   @Before
-  public void DuckSetUpTest() {
+  public void duckSetUpTest() {
     duck = new Duck(2, 3, 80);
   }
 

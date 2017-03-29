@@ -28,7 +28,7 @@ public class ElephantTest {
    * </p>
    */
   @Before
-  public void ElephantSetUpTest() {
+  public void elephantSetUpTest() {
     elephant = new Elephant(2, 3, 80);
   }
 

@@ -28,7 +28,7 @@ public class BarracudaTest {
    * </p>
    */
   @Before
-  public void BarracudaSetUpTest() {
+  public void barracudaSetUpTest() {
     barracuda = new Barracuda(2, 3, 80);
   }
 

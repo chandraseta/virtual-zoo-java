@@ -28,7 +28,7 @@ public class WildColibriTest {
    * </p>
    */
   @Before
-  public void WildColibriSetUpTest() {
+  public void wildColibriSetUpTest() {
     wildColibri = new WildColibri(2, 3, 80);
   }
 

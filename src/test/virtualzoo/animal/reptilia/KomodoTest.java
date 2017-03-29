@@ -28,7 +28,7 @@ public class KomodoTest {
    * </p>
    */
   @Before
-  public void KomodoSetUpTest() {
+  public void komodoSetUpTest() {
     komodo = new Komodo(2, 3, 80);
   }
 

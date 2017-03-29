@@ -28,7 +28,7 @@ public class WolfTest {
    * </p>
    */
   @Before
-  public void WolfSetUpTest() {
+  public void wolfSetUpTest() {
     wolf = new Wolf(2, 3, 80);
   }
 

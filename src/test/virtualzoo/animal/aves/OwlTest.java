@@ -28,7 +28,7 @@ public class OwlTest {
    * </p>
    */
   @Before
-  public void OwlSetUpTest() {
+  public void owlSetUpTest() {
     owl = new Owl(2, 3, 80);
   }
 
