@@ -1,5 +1,10 @@
-test.infrastructure.facility
-test.infrastructure.habitat
+test.virtualzoo.animal.aves
+test.virtualzoo.animal.mammalia
+test.virtualzoo.animal.pisces
+test.virtualzoo.animal.reptilia
+test.virtualzoo.infrastructure.facility
+test.virtualzoo.infrastructure.habitat
+test.virtualzoo.misc
 virtualzoo
 virtualzoo.animal
 virtualzoo.animal.aves

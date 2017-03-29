@@ -6,6 +6,7 @@ import java.awt.Point;
 import org.junit.Before;
 import org.junit.Test;
 import virtualzoo.misc.Person;
+
 /**
  * <p>
  * Kelas PersonTest mengaplikasikan unit test pada kelas Person.
@@ -43,67 +44,67 @@ public class PersonTest {
    */
   @Test
   public void matchInitialization() {
-    Point P = new Point(-1,-1);
-    assertEquals("Inisialisasi sukses",P,person1.getPosition());
+    Point p = new Point(-1, -1);
+    assertEquals("Inisialisasi sukses", p, person1.getPosition());
   }
 
   /**
    * <p>
-   * Set Position berjalan sesuai dengan yang semestinya
+   * Set Position berjalan sesuai dengan yang semestinya.
    * </p>
    */
   @Test
   public void setterProcedure() {
-    Point P = new Point(1,1);
-    person1.setPosition(P);
-    person2.setPosition(1,1);
-    assertEquals("Setter sesuai",P,person1.getPosition());
-    assertEquals("Setter sesuai",P,person2.getPosition());
+    Point p = new Point(1, 1);
+    person1.setPosition(p);
+    person2.setPosition(1, 1);
+    assertEquals("Setter sesuai", p, person1.getPosition());
+    assertEquals("Setter sesuai", p, person2.getPosition());
     person1.resetPosition();
     person2.resetPosition();
   }
 
   /**
    * <p>
-   * Char render pada Person dalam Zoo sesuai dengan yang semestinya
+   * Char render pada Person dalam Zoo sesuai dengan yang semestinya.
    * </p>
    */
   @Test
   public void matchRender() {
-    assertEquals("Render Person : ? ",'?',person1.render());
+    assertEquals("Render Person : ? ", '?', person1.render());
   }
 
   /**
    * <p>
-   * Movement pada Person sudah sesuai dengan prosedur semestinya
+   * Movement pada Person sudah sesuai dengan prosedur semestinya.
    * </p>
    */
   @Test
   public void matchMovement() {
-    Point P = new Point(-1,-2);
+    Point p = new Point(-1, -2);
     person1.move(0);
-    assertEquals("Movement 0 (up) y -= 1",P,person1.getPosition());
-    P.setLocation(0,-2);
+    assertEquals("Movement 0 (up) y -= 1", p, person1.getPosition());
+    p.setLocation(0, -2);
     person1.move(1);
-    assertEquals("Movement 1 (right) x += 1",P,person1.getPosition());
-    P.setLocation(0,-1);
+    assertEquals("Movement 1 (right) x += 1", p, person1.getPosition());
+    p.setLocation(0, -1);
     person1.move(2);
-    assertEquals("Movement 2 (down) y += 1",P,person1.getPosition());
-    P.setLocation(-1,-1);
+    assertEquals("Movement 2 (down) y += 1", p, person1.getPosition());
+    p.setLocation(-1, -1);
     person1.move(3);
-    assertEquals("Movement 3 (left) x -= 1",P,person1.getPosition());
+    assertEquals("Movement 3 (left) x -= 1", p, person1.getPosition());
   }
 
   /**
    * <p>
-   * Reset position mengubah posisi pengunjung ke koordinat (-1,-1)
+   * Reset position mengubah posisi pengunjung ke koordinat (-1,-1).
    * </p>
    */
   @Test
   public void matchReset() {
-    Point P = new Point(-1,-1);
-    person1.setPosition(20,20);
+    Point p = new Point(-1, -1);
+    person1.setPosition(20, 20);
     person1.resetPosition();
-    assertEquals("Reset sukses",P,person1.getPosition());
+    assertEquals("Reset sukses", p, person1.getPosition());
   }
 }
